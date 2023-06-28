@@ -2,7 +2,8 @@
 import os
 import json
 
-config_path = os.path.abspath(os.path.expanduser('~/.noiseflow_config.json'))    
+env = os.environ.get('CONDA_DEFAULT_ENV')
+config_path = os.path.abspath(os.path.expanduser(f'~/.noiseflow_config_{env}.json'))    
 
 try:
     from noiseflow.lib import cc_share

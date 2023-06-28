@@ -19,9 +19,9 @@ pip install joblib
 
 conda install -c conda-forge numpy scipy matplotlib 
 conda install -c conda-forge obspy
-conda install -c conda-forge fftw
-conda install -c conda-forge pybind11
-conda install -c conda-forge xtensor xsimd xtl xtensor-blas xtensor-python
+conda install -c conda-forge fftw (动态库)
+conda install -c conda-forge pybind11 (头文件)
+conda install -c conda-forge xtensor xsimd xtl xtensor-blas xtensor-python (可能是静态库)
 conda install -c conda-forge xtensor-fftw  #(usually failed at most time)  
 ```
 

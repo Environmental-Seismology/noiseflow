@@ -10,7 +10,8 @@ from noiseflow.cc.python.corr import CorrClass_python
 from noiseflow.cc.python.stack import StackClass_python
 
 # Determine the absolute path to the config file
-config_path = os.path.abspath(os.path.expanduser('~/.noiseflow_config.json'))    
+env = os.environ.get('CONDA_DEFAULT_ENV')
+config_path = os.path.abspath(os.path.expanduser(f'~/.noiseflow_config_{env}.json'))    
 
 # Read the config.json file
 with open(config_path) as f:

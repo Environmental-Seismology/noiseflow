@@ -100,7 +100,7 @@ endif()
 
 
 ### KFR 
-include_directories("./external/kfr/include")
+# include_directories("./external/kfr/include")
 
 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "noiseflow"
-version = "0.0.1a8"
+version = "0.0.1a9"
 description = "An ambient noise package"
 authors = ["Fu Yin <oucyinfu@gmail.com>"]
 license = "BSD"
