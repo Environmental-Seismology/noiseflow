@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>noiseflow.cc.python.stack &#8212; NoiseFlow 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/noiseflow/cc/python/stack/index';</script>
+    <link rel="canonical" href="yinfu.info/autoapi/noiseflow/cc/python/stack/index.html" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="noiseflow.cc.python.utils" href="../utils/index.html" />
+    <link rel="prev" title="noiseflow.cc.python.rfft" href="../rfft/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NoiseFlow 0.0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../noiseflow.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../noiseflow.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../app/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.app</span></code></a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../corr/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.corr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rfft/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.rfft</span></code></a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.stack</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../corrdata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.corrdata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rfftdata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.rfftdata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../stackdata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.stackdata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils_load/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.utils_load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils_time/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.utils_time</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wrapper/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.wrapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.client</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../client/client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.client.client</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../dispersion/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.dispersion</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../dispersion/app_dispersion/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.dispersion.app_dispersion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../dispersion/test/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.dispersion.test</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../dvv/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.dvv</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../dvv/monitoring/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.dvv.monitoring</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../signal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../signal/python/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.python</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../signal/python/decimate/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.python.decimate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../signal/python/detrend/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.python.detrend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../signal/python/filter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.python.filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../signal/python/taper/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.python.taper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../signal/rawdata/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.rawdata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../signal/wrapper/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.signal.wrapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.tests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../watch_dog/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">watch_dog</span></code></a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python</span></code></a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.stack</span></code></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-noiseflow.cc.python.stack">
+<span id="noiseflow-cc-python-stack"></span><h1><a class="reference internal" href="#module-noiseflow.cc.python.stack" title="noiseflow.cc.python.stack"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.stack</span></code></a><a class="headerlink" href="#module-noiseflow.cc.python.stack" title="Permalink to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.DOST" title="noiseflow.cc.python.stack.DOST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DOST</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.StackClass_python" title="noiseflow.cc.python.stack.StackClass_python"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StackClass_python</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.adaptive_filter" title="noiseflow.cc.python.stack.adaptive_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adaptive_filter</span></code></a>(d[, g])</p></td>
+<td><p>the adaptive covariance filter to enhance coherent signals. Fellows the method of</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.clusterstack" title="noiseflow.cc.python.stack.clusterstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clusterstack</span></code></a>(d[, h, win, axis, normalize, plot])</p></td>
+<td><p>Performs stack after clustering. The data will be clustered into two groups.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.nroot" title="noiseflow.cc.python.stack.nroot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nroot</span></code></a>(d[, p])</p></td>
+<td><p>this is nth-root stacking algorithm translated based on the matlab function</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.power2pad" title="noiseflow.cc.python.stack.power2pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power2pad</span></code></a>(data)</p></td>
+<td><p>Zero pad data such that its length is a power of 2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.pws" title="noiseflow.cc.python.stack.pws"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pws</span></code></a>(d[, p])</p></td>
+<td><p>Performs phase-weighted stack on array of time series. Modified on the noise function by Tim Climents.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.rms" title="noiseflow.cc.python.stack.rms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rms</span></code></a>(d)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.robust" title="noiseflow.cc.python.stack.robust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">robust</span></code></a>(d[, epsilon, maxstep, win, stat, ref])</p></td>
+<td><p>this is a robust stacking algorithm described in Pavlis and Vernon 2010. Generalized</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.seisstack" title="noiseflow.cc.python.stack.seisstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seisstack</span></code></a>(d, method[, par])</p></td>
+<td><p>This is the same as stack(), to be compatible with old usage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.selective" title="noiseflow.cc.python.stack.selective"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selective</span></code></a>(d, cc_min[, epsilon, maxstep, win, stat, ref])</p></td>
+<td><p>this is a selective stacking algorithm developed by Jared Bryan/Kurama Okubo.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.stack" title="noiseflow.cc.python.stack.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(d, method[, par])</p></td>
+<td><p>this is a wrapper for calling individual stacking functions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#noiseflow.cc.python.stack.tfpws" title="noiseflow.cc.python.stack.tfpws"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tfpws</span></code></a>(d[, p, axis])</p></td>
+<td><p>Performs time-frequency domain phase-weighted stack on array of time series.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">DOST</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.dost">
+<span class="sig-name descname"><span class="pre">dost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.dost"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.dost" title="Permalink to this definition">#</a></dt>
+<dd><p>Discrete Orthonormal Stockwell Transform</p>
+<section id="parameters">
+<h4>PARAMETERS:<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
+<p>d: array of time-series data (numpy.ndarray)</p>
+</section>
+<section id="returns">
+<h4>RETURNS:<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<p>d_dost: array of DOST coefficients (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.dostbw">
+<span class="sig-name descname"><span class="pre">dostbw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.dostbw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.dostbw" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate size of the DOST bandwidths</p>
+<section id="id1">
+<h4>PARAMETERS:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>D: length of time-series data (int)</p>
+</section>
+<section id="id2">
+<h4>RETURNS:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p>bw: list of DOST bandwidths</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.fourier">
+<span class="sig-name descname"><span class="pre">fourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.fourier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.fourier" title="Permalink to this definition">#</a></dt>
+<dd><p>Normalized and centered fft</p>
+<section id="id3">
+<h4>PARAMETERS:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<p>d: array of time series data (numpy.ndarray)</p>
+</section>
+<section id="id4">
+<h4>RETURNS:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<p>fftIn: array of frequency-domain data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.idost">
+<span class="sig-name descname"><span class="pre">idost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.idost"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.idost" title="Permalink to this definition">#</a></dt>
+<dd><p>Inverse Discrete Orthonormal Stockwell Transform</p>
+<section id="id5">
+<h4>PARAMETERS:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>d: array of DOST coefficients (numpy.ndarray)</p>
+</section>
+<section id="id6">
+<h4>RETURNS:<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<p>d_idost: array of time-series data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.ifourier">
+<span class="sig-name descname"><span class="pre">ifourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.ifourier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.ifourier" title="Permalink to this definition">#</a></dt>
+<dd><p>Normalized and centered ifft</p>
+<section id="id7">
+<h4>PARAMETERS:<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<p>d: array of frequency-domain data (numpy.ndarray)</p>
+</section>
+<section id="id8">
+<h4>RETURNS:<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<p>ifftIn: array of time series data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.DOST.pad">
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#DOST.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.DOST.pad" title="Permalink to this definition">#</a></dt>
+<dd><p>Zero pad data such that its length is a power of 2</p>
+<section id="id9">
+<h4>PARAMETERS:<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p>data: array of time series data (numpy.ndarray)</p>
+</section>
+<section id="id10">
+<h4>RETURNS:<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<p>data: zero-padded array of time series data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">StackClass_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">corr_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">par</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_all</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pick</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">median_high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">median_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jobs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python.check_ngood">
+<span class="sig-name descname"><span class="pre">check_ngood</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nindex</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python.check_ngood"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python.check_ngood" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python.pick">
+<span class="sig-name descname"><span class="pre">pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pair_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python.pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python.pick" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python.process_chunk">
+<span class="sig-name descname"><span class="pre">process_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python.process_chunk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python.process_chunk" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python.run" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.StackClass_python.stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pair_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nindex</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#StackClass_python.stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.StackClass_python.stack" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.adaptive_filter">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">adaptive_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#adaptive_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.adaptive_filter" title="Permalink to this definition">#</a></dt>
+<dd><p>the adaptive covariance filter to enhance coherent signals. Fellows the method of
+Nakata et al., 2015 (Appendix B)</p>
+<p>the filtered signal [x1] is given by x1 = ifft(P*x1(w)) where x1 is the ffted spectra
+and P is the filter. P is constructed by using the temporal covariance matrix.</p>
+<section id="id11">
+<h4>PARAMETERS:<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p>d: numpy.ndarray contains the 2D traces of daily/hourly cross-correlation functions
+g: a positive number to adjust the filter harshness [default is 1]
+RETURNS:
+———————-
+newstack: numpy vector contains the stacked cross correlation function</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.clusterstack">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">clusterstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#clusterstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.clusterstack" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs stack after clustering. The data will be clustered into two groups.
+If the two centers of the clusters are similar (defined by corrcoef &gt;= “t”), the original
+traces associated with both clusters will be used to produce the final linear stack, weighted by
+normalized SNR (phase clarity) of each cluster. Otherwise, the one with larger phase clarity
+(defined as max(abs(amplitudes))/rms(abs(amplitudes))) will be used to get the final stack.</p>
+<section id="id12">
+<h4>PARAMETERS:<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<p>d: N length array of time series data (numpy.ndarray)
+h: corrcoeff threshold to decide which group/cluster to use. Default 0.75.
+win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</p>
+<blockquote>
+<div><p>When None, use the entire trace.</p>
+</div></blockquote>
+<p>axis: which axis to stack. default 0.
+normalize: Normalize the traces before clustering. This will only influence the cluster.</p>
+<blockquote>
+<div><p>The final stack will be produced using the original data.</p>
+</div></blockquote>
+<p>plot: plot clustering results. default False.</p>
+</section>
+<section id="id13">
+<h4>RETURNS:<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<p>newstack: final stack.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.nroot">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">nroot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#nroot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.nroot" title="Permalink to this definition">#</a></dt>
+<dd><p>this is nth-root stacking algorithm translated based on the matlab function
+from <a class="github reference external" href="https://github.com/xtyangpsp/SeisStack">xtyangpsp/SeisStack</a> (by Xiaotao Yang; follows the
+reference of Millet, F et al., 2019 JGR)</p>
+<section id="id14">
+<h4>Parameters:<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<p>d: numpy.ndarray contains the 2D cross correlation matrix
+p: np.int, nth root for the stacking. Default is 2.</p>
+</section>
+<section id="id15">
+<h4>Returns:<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<p>newstack: np.ndarray, final stacked waveforms</p>
+<p>Written by Chengxin Jiang &#64;ANU (May2020)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.power2pad">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">power2pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#power2pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.power2pad" title="Permalink to this definition">#</a></dt>
+<dd><p>Zero pad data such that its length is a power of 2</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.pws">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">pws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#pws"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.pws" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs phase-weighted stack on array of time series. Modified on the noise function by Tim Climents.
+Follows methods of Schimmel and Paulssen, 1997.
+If s(t) is time series data (seismogram, or cross-correlation),
+S(t) = s(t) + i*H(s(t)), where H(s(t)) is Hilbert transform of s(t)
+S(t) = s(t) + i*H(s(t)) = A(t)*exp(i*phi(t)), where
+A(t) is envelope of s(t) and phi(t) is phase of s(t)
+Phase-weighted stack, g(t), is then:
+g(t) = 1/N sum j = 1:N s_j(t) * | 1/N sum k = 1:N exp[i * phi_k(t)]|^v
+where N is number of traces used, v is sharpness of phase-weighted stack</p>
+<section id="id16">
+<h4>PARAMETERS:<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<p>d: N length array of time series data (numpy.ndarray)
+p: exponent for phase stack (int). default is 2</p>
+</section>
+<section id="id17">
+<h4>RETURNS:<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<p>newstack: Phase weighted stack of time series data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.rms">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">rms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#rms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.rms" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.robust">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">robust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxstep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#robust"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.robust" title="Permalink to this definition">#</a></dt>
+<dd><p>this is a robust stacking algorithm described in Pavlis and Vernon 2010. Generalized
+by Xiaotao Yang.</p>
+<section id="id18">
+<h4>PARAMETERS:<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
+<p>d: numpy.ndarray contains the 2D cross correlation matrix
+epsilon: residual threhold to quit the iteration (a small number). Default 1E-5
+maxstep: maximum iterations. default 10.
+win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</p>
+<blockquote>
+<div><p>When None, use the entire trace.</p>
+</div></blockquote>
+<p>ref: reference stack, with the same length as individual data. Default: None. Use median().
+RETURNS:
+———————-
+newstack: numpy vector contains the stacked cross correlation</p>
+<p>Written by Marine Denolle
+Modified by Xiaotao Yang</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.seisstack">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">seisstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">par</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#seisstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.seisstack" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the same as stack(), to be compatible with old usage.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.selective">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">selective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cc_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxstep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#selective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.selective" title="Permalink to this definition">#</a></dt>
+<dd><p>this is a selective stacking algorithm developed by Jared Bryan/Kurama Okubo.</p>
+<section id="id19">
+<h4>PARAMETERS:<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<p>d: numpy.ndarray contains the 2D cross correlation matrix
+epsilon: residual threhold to quit the iteration
+cc_min: numpy.float, threshold of correlation coefficient to be selected
+epsilon: residual threhold to quit the iteration (a small number). Default 1E-5
+maxstep: maximum iterations. default 10.
+win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</p>
+<blockquote>
+<div><p>When None, use the entire trace.</p>
+</div></blockquote>
+<p>ref: reference stack, with the same length as individual data. Default: None. Use mean().
+RETURNS:
+———————-
+newstack: numpy vector contains the stacked cross correlation
+nstep: np.int, total number of iterations for the stacking</p>
+<p>Originally ritten by Marine Denolle
+Modified by Chengxin Jiang &#64;Harvard (Oct2020)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.stack">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">par</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.stack" title="Permalink to this definition">#</a></dt>
+<dd><p>this is a wrapper for calling individual stacking functions.
+d: data. 2-d array
+method: stacking method, one of “linear”,”pws”,”robust”,”acf”,”nroot”,”selective”,</p>
+<blockquote>
+<div><p>“cluster”</p>
+</div></blockquote>
+<dl class="simple">
+<dt>par: dictionary containing all parameters for each stacking method. defaults will</dt><dd><p>be used if not specified.</p>
+</dd>
+</dl>
+<p>RETURNS:
+ds: stacked data, which may be a list depending on the method.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="noiseflow.cc.python.stack.tfpws">
+<span class="sig-prename descclassname"><span class="pre">noiseflow.cc.python.stack.</span></span><span class="sig-name descname"><span class="pre">tfpws</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/noiseflow/cc/python/stack.html#tfpws"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#noiseflow.cc.python.stack.tfpws" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs time-frequency domain phase-weighted stack on array of time series.</p>
+<p>$C_{ps} = <a href="#id22"><span class="problematic" id="id23">|(\sum{S*e^{i2\pi}/|S|</span></a>})/M|^p$, where $C_{ps}$ is the phase weight. Then
+$S_{pws} = C_{ps}*S_{ls}$, where $S_{ls}$ is the S transform of the linea stack
+of the whole data.</p>
+<p>Reference:
+Schimmel, M., Stutzmann, E., &amp; Gallart, J. (2011). Using instantaneous phase
+coherence for signal extraction from ambient noise data at a local to a
+global scale. Geophysical Journal International, 184(1), 494–506.
+<a class="reference external" href="https://doi.org/10.1111/j.1365-246X.2010.04861.x">https://doi.org/10.1111/j.1365-246X.2010.04861.x</a></p>
+<section id="id20">
+<h4>PARAMETERS:<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
+<p>d: N length array of time series data (numpy.ndarray)
+p: exponent for phase stack (int). default is 2
+axis: axis to stack, default is 0.</p>
+</section>
+<section id="id21">
+<h4>RETURNS:<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<p>newstack: Phase weighted stack of time series data (numpy.ndarray)</p>
+</section>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../rfft/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.rfft</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../utils/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">noiseflow.cc.python.utils</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST"><code class="docutils literal notranslate"><span class="pre">DOST</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.dost"><code class="docutils literal notranslate"><span class="pre">DOST.dost()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.dostbw"><code class="docutils literal notranslate"><span class="pre">DOST.dostbw()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.fourier"><code class="docutils literal notranslate"><span class="pre">DOST.fourier()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.idost"><code class="docutils literal notranslate"><span class="pre">DOST.idost()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.ifourier"><code class="docutils literal notranslate"><span class="pre">DOST.ifourier()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.DOST.pad"><code class="docutils literal notranslate"><span class="pre">DOST.pad()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python"><code class="docutils literal notranslate"><span class="pre">StackClass_python</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python.check_ngood"><code class="docutils literal notranslate"><span class="pre">StackClass_python.check_ngood()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python.pick"><code class="docutils literal notranslate"><span class="pre">StackClass_python.pick()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python.process_chunk"><code class="docutils literal notranslate"><span class="pre">StackClass_python.process_chunk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python.run"><code class="docutils literal notranslate"><span class="pre">StackClass_python.run()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.StackClass_python.stack"><code class="docutils literal notranslate"><span class="pre">StackClass_python.stack()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.adaptive_filter"><code class="docutils literal notranslate"><span class="pre">adaptive_filter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.clusterstack"><code class="docutils literal notranslate"><span class="pre">clusterstack()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.nroot"><code class="docutils literal notranslate"><span class="pre">nroot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.power2pad"><code class="docutils literal notranslate"><span class="pre">power2pad()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.pws"><code class="docutils literal notranslate"><span class="pre">pws()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.rms"><code class="docutils literal notranslate"><span class="pre">rms()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.robust"><code class="docutils literal notranslate"><span class="pre">robust()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.seisstack"><code class="docutils literal notranslate"><span class="pre">seisstack()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.selective"><code class="docutils literal notranslate"><span class="pre">selective()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.stack"><code class="docutils literal notranslate"><span class="pre">stack()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noiseflow.cc.python.stack.tfpws"><code class="docutils literal notranslate"><span class="pre">tfpws()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../../../../_sources/autoapi/noiseflow/cc/python/stack/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023-2023, Fu Yin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

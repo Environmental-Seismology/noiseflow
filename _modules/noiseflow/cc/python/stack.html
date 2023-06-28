@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>noiseflow.cc.python.stack &#8212; NoiseFlow 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/noiseflow/cc/python/stack';</script>
+    <link rel="canonical" href="yinfu.info/_modules/noiseflow/cc/python/stack.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NoiseFlow 0.0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../noiseflow.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../autoapi/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../noiseflow.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../autoapi/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">noiseflow.cc.python.stack</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for noiseflow.cc.python.stack</h1><div class="highlight"><pre>
+<span></span><span class="c1"># The stack functions are from https://github.com/xtyangpsp/StackMaster</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span> 
+<span class="kn">from</span> <span class="nn">stockwell</span> <span class="kn">import</span> <span class="n">st</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">compress</span>
+<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span>
+<span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span><span class="n">ifft</span><span class="p">,</span><span class="n">next_fast_len</span>
+<span class="kn">from</span> <span class="nn">tslearn.utils</span> <span class="kn">import</span> <span class="n">to_time_series_dataset</span>
+<span class="kn">from</span> <span class="nn">tslearn.clustering</span> <span class="kn">import</span> <span class="n">TimeSeriesKMeans</span>
+<span class="kn">from</span> <span class="nn">noiseflow.cc.python.utils</span> <span class="kn">import</span> <span class="n">slice_window</span><span class="p">,</span> <span class="n">split</span>
+
+
+<div class="viewcode-block" id="rms"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.rms">[docs]</a><span class="k">def</span> <span class="nf">rms</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="power2pad"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.power2pad">[docs]</a><span class="k">def</span> <span class="nf">power2pad</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;Zero pad data such that its length is a power of 2&quot;&quot;&quot;</span>
+	<span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))))</span>
+	<span class="n">pad_end</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+
+	<span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">data</span><span class="p">,</span><span class="n">pad_end</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="stack"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.stack">[docs]</a><span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">par</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    this is a wrapper for calling individual stacking functions.</span>
+<span class="sd">    d: data. 2-d array</span>
+<span class="sd">    method: stacking method, one of &quot;linear&quot;,&quot;pws&quot;,&quot;robust&quot;,&quot;acf&quot;,&quot;nroot&quot;,&quot;selective&quot;,</span>
+<span class="sd">            &quot;cluster&quot;</span>
+<span class="sd">    par: dictionary containing all parameters for each stacking method. defaults will</span>
+<span class="sd">        be used if not specified.</span>
+
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ds: stacked data, which may be a list depending on the method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">method_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="s2">&quot;pws&quot;</span><span class="p">,</span><span class="s2">&quot;robust&quot;</span><span class="p">,</span><span class="s2">&quot;acf&quot;</span><span class="p">,</span><span class="s2">&quot;nroot&quot;</span><span class="p">,</span><span class="s2">&quot;selective&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cluster&quot;</span><span class="p">,</span><span class="s2">&quot;tfpws&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">method_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;$s not recoganized. use one of $s&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">method_list</span><span class="p">)))</span>
+    
+    <span class="n">par0</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;axis&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;p&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;cc_min&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;epsilon&quot;</span><span class="p">:</span><span class="mf">1E-5</span><span class="p">,</span><span class="s2">&quot;maxstep&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;win&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;stat&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s2">&quot;h&quot;</span><span class="p">:</span><span class="mf">0.75</span><span class="p">,</span><span class="s1">&#39;plot&#39;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s1">&#39;normalize&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span><span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>  <span class="c1">#stat: if true, will return statistics.</span>
+    
+    <span class="k">if</span> <span class="n">par</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">par</span><span class="o">=</span><span class="n">par0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">par</span><span class="o">=</span><span class="p">{</span><span class="o">**</span><span class="n">par0</span><span class="p">,</span><span class="o">**</span><span class="n">par</span><span class="p">}</span> <span class="c1">#use par values if specified. otherwise, use defaults.</span>
+
+    <span class="k">if</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;linear&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s2">&quot;axis&quot;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;pws&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">pws</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;tfpws&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">tfpws</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">])</span>
+    <span class="c1"># elif method.lower() == &#39;tfpws-dost&#39;:</span>
+    <span class="c1">#     ds = tfpws_dost(d,p=par[&#39;p&#39;])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;robust&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">robust</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;epsilon&#39;</span><span class="p">],</span><span class="n">maxstep</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;maxstep&#39;</span><span class="p">],</span><span class="n">win</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s2">&quot;win&quot;</span><span class="p">],</span>
+                <span class="n">stat</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;stat&#39;</span><span class="p">],</span><span class="n">ref</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;ref&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;acf&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">adaptive_filter</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;nroot&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">nroot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;selective&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">selective</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">cc_min</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;cc_min&#39;</span><span class="p">],</span><span class="n">epsilon</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;epsilon&#39;</span><span class="p">],</span><span class="n">maxstep</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;maxstep&#39;</span><span class="p">],</span>
+                <span class="n">stat</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;stat&#39;</span><span class="p">],</span><span class="n">ref</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;ref&#39;</span><span class="p">],</span><span class="n">win</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s2">&quot;win&quot;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;cluster&#39;</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">clusterstack</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">h</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;axis&#39;</span><span class="p">],</span><span class="n">win</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s2">&quot;win&quot;</span><span class="p">],</span>
+        <span class="n">normalize</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;normalize&#39;</span><span class="p">],</span><span class="n">plot</span><span class="o">=</span><span class="n">par</span><span class="p">[</span><span class="s1">&#39;plot&#39;</span><span class="p">])</span>
+    <span class="c1">#</span>
+    <span class="k">return</span> <span class="n">ds</span></div>
+
+<div class="viewcode-block" id="seisstack"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.seisstack">[docs]</a><span class="k">def</span> <span class="nf">seisstack</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">par</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is the same as stack(), to be compatible with old usage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span><span class="n">par</span><span class="o">=</span><span class="n">par</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="robust"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.robust">[docs]</a><span class="k">def</span> <span class="nf">robust</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1E-5</span><span class="p">,</span><span class="n">maxstep</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">stat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    this is a robust stacking algorithm described in Pavlis and Vernon 2010. Generalized</span>
+<span class="sd">    by Xiaotao Yang.</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    d: numpy.ndarray contains the 2D cross correlation matrix</span>
+<span class="sd">    epsilon: residual threhold to quit the iteration (a small number). Default 1E-5</span>
+<span class="sd">    maxstep: maximum iterations. default 10.</span>
+<span class="sd">    win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</span>
+<span class="sd">            When None, use the entire trace.</span>
+<span class="sd">    ref: reference stack, with the same length as individual data. Default: None. Use median().</span>
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    newstack: numpy vector contains the stacked cross correlation</span>
+
+<span class="sd">    Written by Marine Denolle</span>
+<span class="sd">    Modified by Xiaotao Yang</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">res</span>  <span class="o">=</span> <span class="mf">9E9</span>  <span class="c1"># residuals</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">small_number</span><span class="o">=</span><span class="mf">1E-15</span>
+    <span class="n">nstep</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">newstack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">newstack</span> <span class="o">=</span> <span class="n">ref</span>
+        <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">win</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="n">epsilon</span> <span class="ow">and</span> <span class="n">nstep</span> <span class="o">&lt;=</span><span class="n">maxstep</span><span class="p">:</span>
+            <span class="n">stack</span> <span class="o">=</span> <span class="n">newstack</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                <span class="n">dtemp</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+                <span class="n">crap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">dtemp</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+                <span class="n">crap_dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">crap</span><span class="p">)</span>
+                <span class="n">di_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dtemp</span><span class="p">)</span>
+                <span class="n">ri_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dtemp</span> <span class="o">-</span>  <span class="n">crap_dot</span><span class="o">*</span><span class="n">stack</span><span class="p">[</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+                <span class="k">if</span> <span class="n">ri_norm</span> <span class="o">&lt;</span> <span class="n">small_number</span><span class="p">:</span>
+                    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">crap_dot</span><span class="p">)</span> <span class="o">/</span><span class="n">di_norm</span><span class="o">/</span><span class="n">ri_norm</span>
+            <span class="n">w</span> <span class="o">=</span><span class="n">w</span> <span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">newstack</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#/len(cc_array[:,1])</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">newstack</span><span class="o">-</span><span class="n">stack</span><span class="p">,</span><span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">newstack</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">nstep</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">stat</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newstack</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">nstep</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newstack</span></div>
+
+<div class="viewcode-block" id="adaptive_filter"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.adaptive_filter">[docs]</a><span class="k">def</span> <span class="nf">adaptive_filter</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    the adaptive covariance filter to enhance coherent signals. Fellows the method of</span>
+<span class="sd">    Nakata et al., 2015 (Appendix B)</span>
+
+<span class="sd">    the filtered signal [x1] is given by x1 = ifft(P*x1(w)) where x1 is the ffted spectra</span>
+<span class="sd">    and P is the filter. P is constructed by using the temporal covariance matrix.</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    d: numpy.ndarray contains the 2D traces of daily/hourly cross-correlation functions</span>
+<span class="sd">    g: a positive number to adjust the filter harshness [default is 1]</span>
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    newstack: numpy vector contains the stacked cross correlation function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">Nfft</span> <span class="o">=</span> <span class="n">next_fast_len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+
+        <span class="c1"># fft the 2D array</span>
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">Nfft</span><span class="p">)[:,:</span><span class="n">M</span><span class="p">]</span>
+
+        <span class="c1"># make cross-spectrm matrix</span>
+        <span class="n">cspec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">M</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">kk</span> <span class="o">=</span> <span class="n">ii</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">jj</span>
+                <span class="n">cspec</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">spec</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">spec</span><span class="p">[</span><span class="n">jj</span><span class="p">])</span>
+
+        <span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+        <span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+        <span class="c1"># construct the filter P</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">mm</span> <span class="o">=</span> <span class="n">ii</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">ii</span>
+            <span class="n">S2</span> <span class="o">+=</span> <span class="n">cspec</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">kk</span> <span class="o">=</span> <span class="n">ii</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">jj</span>
+                <span class="n">S1</span> <span class="o">+=</span> <span class="n">cspec</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">S1</span><span class="o">-</span><span class="n">S2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">S2</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="n">g</span><span class="p">)</span>
+
+        <span class="c1"># make ifft</span>
+        <span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">ifft</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">spec</span><span class="p">),</span><span class="n">Nfft</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,:</span><span class="n">M</span><span class="p">])</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">narr</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#</span>
+    <span class="k">return</span> <span class="n">newstack</span></div>
+
+<div class="viewcode-block" id="pws"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.pws">[docs]</a><span class="k">def</span> <span class="nf">pws</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Performs phase-weighted stack on array of time series. Modified on the noise function by Tim Climents.</span>
+<span class="sd">    Follows methods of Schimmel and Paulssen, 1997.</span>
+<span class="sd">    If s(t) is time series data (seismogram, or cross-correlation),</span>
+<span class="sd">    S(t) = s(t) + i*H(s(t)), where H(s(t)) is Hilbert transform of s(t)</span>
+<span class="sd">    S(t) = s(t) + i*H(s(t)) = A(t)*exp(i*phi(t)), where</span>
+<span class="sd">    A(t) is envelope of s(t) and phi(t) is phase of s(t)</span>
+<span class="sd">    Phase-weighted stack, g(t), is then:</span>
+<span class="sd">    g(t) = 1/N sum j = 1:N s_j(t) * | 1/N sum k = 1:N exp[i * phi_k(t)]|^v</span>
+<span class="sd">    where N is number of traces used, v is sharpness of phase-weighted stack</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    d: N length array of time series data (numpy.ndarray)</span>
+<span class="sd">    p: exponent for phase stack (int). default is 2</span>
+
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    newstack: Phase weighted stack of time series data (numpy.ndarray)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">analytic</span> <span class="o">=</span> <span class="n">hilbert</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">next_fast_len</span><span class="p">(</span><span class="n">M</span><span class="p">))[:,:</span><span class="n">M</span><span class="p">]</span>
+        <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">analytic</span><span class="p">)</span>
+        <span class="n">phase_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">phase</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">phase_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phase_stack</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="n">weighted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">phase_stack</span><span class="p">)</span>
+
+        <span class="n">newstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">weighted</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">newstack</span></div>
+
+<div class="viewcode-block" id="nroot"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.nroot">[docs]</a><span class="k">def</span> <span class="nf">nroot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    this is nth-root stacking algorithm translated based on the matlab function</span>
+<span class="sd">    from https://github.com/xtyangpsp/SeisStack (by Xiaotao Yang; follows the</span>
+<span class="sd">    reference of Millet, F et al., 2019 JGR)</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    d: numpy.ndarray contains the 2D cross correlation matrix</span>
+<span class="sd">    p: np.int, nth root for the stacking. Default is 2.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    newstack: np.ndarray, final stacked waveforms</span>
+
+<span class="sd">    Written by Chengxin Jiang @ANU (May2020)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed for nroot_stack&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">dout</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="c1"># construct y</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">dat</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">ii</span><span class="p">,:]</span>
+            <span class="n">dout</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">dout</span> <span class="o">/=</span> <span class="n">N</span>
+
+        <span class="c1"># the final stacked waveform</span>
+        <span class="n">newstack</span> <span class="o">=</span> <span class="n">dout</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dout</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">newstack</span></div>
+
+
+<div class="viewcode-block" id="selective"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.selective">[docs]</a><span class="k">def</span> <span class="nf">selective</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">cc_min</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1E-5</span><span class="p">,</span><span class="n">maxstep</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">stat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    this is a selective stacking algorithm developed by Jared Bryan/Kurama Okubo.</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    d: numpy.ndarray contains the 2D cross correlation matrix</span>
+<span class="sd">    epsilon: residual threhold to quit the iteration</span>
+<span class="sd">    cc_min: numpy.float, threshold of correlation coefficient to be selected</span>
+<span class="sd">    epsilon: residual threhold to quit the iteration (a small number). Default 1E-5</span>
+<span class="sd">    maxstep: maximum iterations. default 10.</span>
+<span class="sd">    win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</span>
+<span class="sd">            When None, use the entire trace.</span>
+<span class="sd">    ref: reference stack, with the same length as individual data. Default: None. Use mean().</span>
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ----------------------</span>
+<span class="sd">    newstack: numpy vector contains the stacked cross correlation</span>
+<span class="sd">    nstep: np.int, total number of iterations for the stacking</span>
+
+<span class="sd">    Originally ritten by Marine Denolle</span>
+<span class="sd">    Modified by Chengxin Jiang @Harvard (Oct2020)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed for selective stacking&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">res</span>  <span class="o">=</span> <span class="mf">9E9</span>  <span class="c1"># residuals</span>
+        <span class="n">cof</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">newstack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">newstack</span> <span class="o">=</span> <span class="n">ref</span>
+
+        <span class="n">nstep</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">win</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># start iteration</span>
+        <span class="k">while</span> <span class="n">res</span><span class="o">&gt;</span><span class="n">epsilon</span> <span class="ow">and</span> <span class="n">nstep</span><span class="o">&lt;=</span><span class="n">maxstep</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">cof</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">newstack</span><span class="p">[</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">d</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># find good waveforms</span>
+            <span class="n">indx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cof</span><span class="o">&gt;=</span><span class="n">cc_min</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">nstep</span> <span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">indx</span><span class="p">):</span>
+                <span class="n">newstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="n">d</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],))</span>
+                <span class="n">newstack</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cannot find good waveforms inside selective stacking&#39;</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">oldstack</span> <span class="o">=</span> <span class="n">newstack</span>
+                <span class="n">newstack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">indx</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">newstack</span><span class="o">-</span><span class="n">oldstack</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">newstack</span><span class="p">)</span><span class="o">*</span><span class="n">M</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">stat</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newstack</span><span class="p">,</span> <span class="n">nstep</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newstack</span></div>
+<span class="c1">#</span>
+<div class="viewcode-block" id="clusterstack"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.clusterstack">[docs]</a><span class="k">def</span> <span class="nf">clusterstack</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">h</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Performs stack after clustering. The data will be clustered into two groups.</span>
+<span class="sd">    If the two centers of the clusters are similar (defined by corrcoef &gt;= &quot;t&quot;), the original</span>
+<span class="sd">    traces associated with both clusters will be used to produce the final linear stack, weighted by</span>
+<span class="sd">    normalized SNR (phase clarity) of each cluster. Otherwise, the one with larger phase clarity</span>
+<span class="sd">    (defined as max(abs(amplitudes))/rms(abs(amplitudes))) will be used to get the final stack.</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    d: N length array of time series data (numpy.ndarray)</span>
+<span class="sd">    h: corrcoeff threshold to decide which group/cluster to use. Default 0.75.</span>
+<span class="sd">    win: [start_index,end_index] used to compute the weight, instead of the entire trace. Default None.</span>
+<span class="sd">            When None, use the entire trace.</span>
+<span class="sd">    axis: which axis to stack. default 0.</span>
+<span class="sd">    normalize: Normalize the traces before clustering. This will only influence the cluster.</span>
+<span class="sd">            The final stack will be produced using the original data.</span>
+<span class="sd">    plot: plot clustering results. default False.</span>
+
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    newstack: final stack.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">ncluster</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#DO NOT change this value.</span>
+    <span class="n">min_trace</span><span class="o">=</span><span class="mi">2</span> <span class="c1">#minimum of two traces.</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span> <span class="c1">#matric to compute the distance in kmeans clustering.</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;=</span> <span class="n">min_trace</span><span class="p">:</span>
+        <span class="n">dataN</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="n">dataN</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">to_time_series_dataset</span><span class="p">(</span><span class="n">dataN</span><span class="p">)</span>
+
+        <span class="n">km</span> <span class="o">=</span> <span class="n">TimeSeriesKMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">ncluster</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                              <span class="n">max_iter_barycenter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+        <span class="n">snr_all</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">centers_all</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">cidx</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">win</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncluster</span><span class="p">):</span>
+            <span class="n">cidx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">y_pred</span><span class="o">==</span><span class="n">yi</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">center</span><span class="o">=</span><span class="n">km</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">yi</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="c1">#np.squeeze(np.mean(ts[y_pred == yi].T,axis=2))</span>
+            <span class="n">centers_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+            <span class="n">snr</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">center</span><span class="p">[</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]]))</span><span class="o">/</span><span class="n">rms</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">center</span><span class="p">))</span>
+            <span class="n">snr_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">snr</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncluster</span><span class="p">):</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ncluster</span><span class="p">,</span><span class="n">yi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">cidx</span><span class="p">[</span><span class="n">yi</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">),</span><span class="s1">&#39;k-&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">centers_all</span><span class="p">[</span><span class="n">yi</span><span class="p">],</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cluster </span><span class="si">%d</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">yi</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cidx</span><span class="p">[</span><span class="n">yi</span><span class="p">])))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">cc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">centers_all</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">centers_all</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">cc</span><span class="o">&gt;=</span> <span class="n">h</span><span class="p">:</span> <span class="c1">#use all data</span>
+            <span class="n">snr_normalize</span><span class="o">=</span><span class="n">snr_all</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">snr_all</span><span class="p">)</span>
+            <span class="n">newstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">M</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncluster</span><span class="p">):</span>
+                <span class="n">newstack</span> <span class="o">+=</span> <span class="n">snr_normalize</span><span class="p">[</span><span class="n">yi</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">cidx</span><span class="p">[</span><span class="n">yi</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">goodidx</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">snr_all</span><span class="p">)</span>
+            <span class="n">newstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">cidx</span><span class="p">[</span><span class="n">goodidx</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">dataN</span><span class="p">,</span><span class="n">ts</span><span class="p">,</span><span class="n">y_pred</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#</span>
+    <span class="k">return</span> <span class="n">newstack</span></div>
+
+<div class="viewcode-block" id="tfpws"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.tfpws">[docs]</a><span class="k">def</span> <span class="nf">tfpws</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Performs time-frequency domain phase-weighted stack on array of time series.</span>
+
+<span class="sd">    $C_{ps} = |(\sum{S*e^{i2\pi}/|S|})/M|^p$, where $C_{ps}$ is the phase weight. Then</span>
+<span class="sd">    $S_{pws} = C_{ps}*S_{ls}$, where $S_{ls}$ is the S transform of the linea stack</span>
+<span class="sd">    of the whole data.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">    Schimmel, M., Stutzmann, E., &amp; Gallart, J. (2011). Using instantaneous phase</span>
+<span class="sd">    coherence for signal extraction from ambient noise data at a local to a</span>
+<span class="sd">    global scale. Geophysical Journal International, 184(1), 494–506.</span>
+<span class="sd">    https://doi.org/10.1111/j.1365-246X.2010.04861.x</span>
+
+<span class="sd">    PARAMETERS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    d: N length array of time series data (numpy.ndarray)</span>
+<span class="sd">    p: exponent for phase stack (int). default is 2</span>
+<span class="sd">    axis: axis to stack, default is 0.</span>
+
+<span class="sd">    RETURNS:</span>
+<span class="sd">    ---------------------</span>
+<span class="sd">    newstack: Phase weighted stack of time series data (numpy.ndarray)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2D matrix is needed&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">N</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">lstack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+        <span class="c1">#get the ST of the linear stack first</span>
+        <span class="n">stock_ls</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">st</span><span class="p">(</span><span class="n">power2pad</span><span class="p">(</span><span class="n">lstack</span><span class="p">))</span>
+
+        <span class="c1">#run a ST to get the dimension of ST result</span>
+        <span class="n">stock_temp</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">st</span><span class="p">(</span><span class="n">power2pad</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">phase_stack</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">stock_temp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">stock_temp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex128&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span> <span class="c1">#zero index has been computed.</span>
+                <span class="n">stock_temp</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">st</span><span class="p">(</span><span class="n">power2pad</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">phase_stack</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">stock_temp</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">stock_temp</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">stock_temp</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="n">phase_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phase_stack</span><span class="o">/</span><span class="n">N</span><span class="p">)</span><span class="o">**</span><span class="n">p</span>
+
+        <span class="n">pwstock</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">phase_stack</span><span class="p">,</span><span class="n">stock_ls</span><span class="p">)</span>
+        <span class="n">recdostIn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">ist</span><span class="p">(</span><span class="n">pwstock</span><span class="p">))</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">recdostIn</span><span class="p">[:</span><span class="n">M</span><span class="p">]</span> <span class="c1"># trim padding</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstack</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#</span>
+    <span class="k">return</span> <span class="n">newstack</span></div>
+
+<span class="c1"># def tfpws_dost(d,p=2,axis=0):</span>
+<span class="c1">#     &#39;&#39;&#39;</span>
+<span class="c1">#     Performs time-frequency domain phase-weighted stack on array of time series using DOST (Discrete</span>
+<span class="c1">#     orthogonal stockwell transform).</span>
+<span class="c1">#     $C_{ps} = |(\sum{S*e^{i2\pi}/|S|})/M|^p$, where $C_{ps}$ is the phase weight. Then</span>
+<span class="c1"># 	$S_{pws} = C_{ps}*S_{ls}$, where $S_{ls}$ is the Discrete Orthonormal S transform</span>
+<span class="c1"># 	of the linear stack of the whole data.</span>
+
+<span class="c1">#     DOST stacking was implemented by Jared Bryan.</span>
+
+<span class="c1">#     Reference for tf-PWS:</span>
+<span class="c1">#     Schimmel, M., Stutzmann, E., &amp; Gallart, J. (2011). Using instantaneous phase</span>
+<span class="c1">#     coherence for signal extraction from ambient noise data at a local to a</span>
+<span class="c1">#     global scale. Geophysical Journal International, 184(1), 494–506.</span>
+<span class="c1">#     https://doi.org/10.1111/j.1365-246X.2010.04861.x</span>
+
+<span class="c1">#     Reference for DOST:</span>
+<span class="c1">#     U. Battisti, L. Riba, &quot;Window-dependent bases for efficient representations of the</span>
+<span class="c1"># 	Stockwell transform&quot;, Applied and Computational Harmonic Analysis, 23 February 2015,</span>
+<span class="c1"># 	http://dx.doi.org/10.1016/j.acha.2015.02.002.</span>
+
+<span class="c1">#     PARAMETERS:</span>
+<span class="c1">#     ---------------------</span>
+<span class="c1">#     d: N length array of time series data (numpy.ndarray)</span>
+<span class="c1">#     p: exponent for phase stack (int). default is 2</span>
+<span class="c1">#     axis: axis to stack, default is 0.</span>
+
+<span class="c1">#     RETURNS:</span>
+<span class="c1">#     ---------------------</span>
+<span class="c1">#     newstack: Phase weighted stack of time series data (numpy.ndarray)</span>
+<span class="c1">#     &#39;&#39;&#39;</span>
+<span class="c1">#     if d.ndim == 1:</span>
+<span class="c1">#         print(&#39;2D matrix is needed&#39;)</span>
+<span class="c1">#         return d</span>
+<span class="c1">#     N,M = d.shape</span>
+<span class="c1">#     if N &gt;=2:</span>
+<span class="c1">#         lstack=np.mean(d,axis=axis)</span>
+<span class="c1">#         #get the dost of the linear stack first</span>
+<span class="c1">#         stock_ls_dost=DOST(lstack) # initialize dost object</span>
+<span class="c1">#         stock_ls=stock_ls_dost.dost(stock_ls_dost.data) # calculate the dost</span>
+
+<span class="c1">#     	# calculate dost for first trace to know its shape</span>
+<span class="c1">#         stock_dost=DOST(d[0])</span>
+<span class="c1">#         stock_temp=stock_dost.dost(stock_dost.data)</span>
+<span class="c1">#     	# initialize stack</span>
+<span class="c1">#         phase_stack=np.zeros(len(stock_temp),dtype=&#39;complex128&#39;)</span>
+<span class="c1">#     	# calculate the dost for each trace to be stacked</span>
+<span class="c1">#         for i in range(d.shape[0]):</span>
+<span class="c1">#         	if i&gt;0: # zero index has been computed</span>
+<span class="c1">#         	    stock_dost=DOST(d[i])</span>
+<span class="c1">#         	    stock_temp=stock_dost.dost(stock_dost.data)</span>
+                    
+<span class="c1">#             phase_stack+=np.multiply(stock_temp,np.angle(stock_temp))/np.abs(stock_temp)</span>
+
+<span class="c1">#         phase_stack = np.abs(phase_stack/N)**p</span>
+
+<span class="c1">#         pwstock=np.multiply(phase_stack,stock_ls)</span>
+<span class="c1">#         recdostIn = np.real(stock_dost.idost(pwstock))</span>
+<span class="c1">#         newstack = recdostIn[:M] # trim padding</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         newstack=d[0].copy()</span>
+<span class="c1">#     #</span>
+<span class="c1">#     return newstack</span>
+
+<div class="viewcode-block" id="DOST"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST">[docs]</a><span class="k">class</span> <span class="nc">DOST</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="c1"># make sure data length is a power of 2</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))):</span>
+            <span class="c1"># length of data already a power of 2</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># pad data to nearest power of 2</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DOST.pad"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.pad">[docs]</a>    <span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zero pad data such that its length is a power of 2</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        data: array of time series data (numpy.ndarray)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        data: zero-padded array of time series data (numpy.ndarray)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))))</span>
+        <span class="n">pad_end</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">data</span><span class="p">,</span><span class="n">pad_end</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="DOST.fourier"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.fourier">[docs]</a>    <span class="k">def</span> <span class="nf">fourier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normalized and centered fft</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d: array of time series data (numpy.ndarray)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        fftIn: array of frequency-domain data (numpy.ndarray)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fftIn</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">fftIn</span></div>
+
+<div class="viewcode-block" id="DOST.ifourier"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.ifourier">[docs]</a>    <span class="k">def</span> <span class="nf">ifourier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normalized and centered ifft</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d: array of frequency-domain data (numpy.ndarray)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        ifftIn: array of time series data (numpy.ndarray)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ifftIn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">ifftIn</span></div>
+
+<div class="viewcode-block" id="DOST.dostbw"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.dostbw">[docs]</a>    <span class="k">def</span> <span class="nf">dostbw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">D</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate size of the DOST bandwidths</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        D: length of time-series data (int)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        bw: list of DOST bandwidths</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bw</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">bw</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e-9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">bw</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bw</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">+</span><span class="mf">1e-9</span><span class="p">))</span>
+        <span class="n">bw</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bw</span></div>
+
+<div class="viewcode-block" id="DOST.dost"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.dost">[docs]</a>    <span class="k">def</span> <span class="nf">dost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Discrete Orthonormal Stockwell Transform</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d: array of time-series data (numpy.ndarray)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d_dost: array of DOST coefficients (numpy.ndarray)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d_dost</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fourier</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">D</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">bw</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dostbw</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+        <span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+        <span class="c1"># heuristically, this is a short-time fourier transform with a frequency-dependent bandwidth</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bw</span><span class="p">:</span>
+            <span class="n">i</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="n">i</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d_dost</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ifourier</span><span class="p">(</span><span class="n">d_dost</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="n">i</span>
+        <span class="k">return</span> <span class="n">d_dost</span></div>
+
+<div class="viewcode-block" id="DOST.idost"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.DOST.idost">[docs]</a>    <span class="k">def</span> <span class="nf">idost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Inverse Discrete Orthonormal Stockwell Transform</span>
+
+<span class="sd">        PARAMETERS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d: array of DOST coefficients (numpy.ndarray)</span>
+
+<span class="sd">        RETURNS:</span>
+<span class="sd">        ---------------------</span>
+<span class="sd">        d_idost: array of time-series data (numpy.ndarray)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d_idost</span><span class="o">=</span><span class="n">d</span>
+        <span class="n">D</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">bw</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dostbw</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+        <span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bw</span><span class="p">:</span>
+            <span class="n">i</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="n">i</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d_idost</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fourier</span><span class="p">(</span><span class="n">d_idost</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="n">i</span>
+        <span class="n">d_idost</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ifourier</span><span class="p">(</span><span class="n">d_idost</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d_idost</span></div></div>
+
+
+<div class="viewcode-block" id="StackClass_python"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python">[docs]</a><span class="k">class</span> <span class="nc">StackClass_python</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">corr_data</span><span class="p">,</span> <span class="n">stack_method</span><span class="p">,</span> <span class="n">par</span><span class="p">,</span> <span class="n">stack_all</span><span class="p">,</span> <span class="n">stack_len</span><span class="p">,</span> <span class="n">stack_step</span><span class="p">,</span> <span class="n">pick</span><span class="p">,</span> <span class="n">median_high</span><span class="p">,</span> <span class="n">median_low</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">jobs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corr_data</span> <span class="o">=</span> <span class="n">corr_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack_method</span> <span class="o">=</span> <span class="n">stack_method</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">par</span> <span class="o">=</span> <span class="n">par</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack_all</span> <span class="o">=</span> <span class="n">stack_all</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack_len</span> <span class="o">=</span> <span class="n">stack_len</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack_step</span> <span class="o">=</span> <span class="n">stack_step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pick_m</span> <span class="o">=</span> <span class="n">pick</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">median_high</span> <span class="o">=</span> <span class="n">median_high</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">median_low</span> <span class="o">=</span> <span class="n">median_low</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">=</span> <span class="n">jobs</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">corr_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corr_win_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">corr_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">npts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">corr_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+        <span class="c1"># slice_window --&gt; _stack_win_num, _win_info</span>
+        <span class="k">if</span> <span class="n">stack_all</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">win_info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">corr_win_num</span><span class="p">]])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">win_info</span> <span class="o">=</span> <span class="n">slice_window</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">corr_win_num</span><span class="p">,</span> <span class="n">stack_len</span><span class="p">,</span> <span class="n">stack_step</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">win_info</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># initialize output_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ngood_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">corr_data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">npts</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">freq_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex64</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">corr_data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">npts</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">freq_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex128</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error: please input the correct data type.&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="StackClass_python.pick"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python.pick">[docs]</a>    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair_id</span><span class="p">):</span>
+        <span class="n">nindex</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pick_m</span><span class="p">:</span>
+            <span class="c1"># SOME WARNING HERE!!!</span>
+            <span class="n">ampmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">corr_data</span><span class="p">[</span><span class="n">pair_id</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">median_ampmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ampmax</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ampmax</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">median_low</span> <span class="o">*</span> <span class="n">median_ampmax</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ampmax</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">median_high</span> <span class="o">*</span> <span class="n">median_ampmax</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        
+            <span class="n">nindex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nindex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">corr_win_num</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">nindex</span></div>
+
+
+<div class="viewcode-block" id="StackClass_python.check_ngood"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python.check_ngood">[docs]</a>    <span class="k">def</span> <span class="nf">check_ngood</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nindex</span><span class="p">):</span>
+        <span class="n">ngood</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pick_m</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">):</span>
+                <span class="n">ngood</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">nindex</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">win_info</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">nindex</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">win_info</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ngood</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_len</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ngood</span></div>
+
+
+<div class="viewcode-block" id="StackClass_python.stack"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python.stack">[docs]</a>    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair_id</span><span class="p">,</span> <span class="n">nindex</span><span class="p">):</span>
+        <span class="n">stack_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">npts</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_dtype</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_win_num</span><span class="p">):</span>
+            <span class="n">each_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">win_info</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">win_info</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">pick_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">each_index</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">each_index</span><span class="p">,</span> <span class="n">nindex</span><span class="p">)))</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pick_index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">npts</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pick_corr_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corr_data</span><span class="p">[</span><span class="n">pair_id</span><span class="p">,</span> <span class="n">pick_index</span><span class="p">,</span> <span class="p">:]</span>
+                <span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">pick_corr_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_method</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">par</span><span class="p">)</span>    
+
+        <span class="k">return</span> <span class="n">stack_data</span></div>
+
+
+<div class="viewcode-block" id="StackClass_python.process_chunk"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python.process_chunk">[docs]</a>    <span class="k">def</span> <span class="nf">process_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_start</span><span class="p">,</span> <span class="n">chunk_end</span><span class="p">):</span>
+        <span class="n">ngood_results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">stack_data_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="ow">and</span> <span class="n">chunk_start</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">chunk_start</span><span class="p">,</span> <span class="n">chunk_end</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">chunk_start</span><span class="p">,</span> <span class="n">chunk_end</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">:</span>
+            <span class="c1"># pick --&gt; _nindex</span>
+            <span class="n">nindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+            <span class="c1"># ngood</span>
+            <span class="n">ngood</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_ngood</span><span class="p">(</span><span class="n">nindex</span><span class="p">)</span>
+
+            <span class="c1"># corr</span>
+            <span class="n">stack_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">nindex</span><span class="p">)</span> <span class="c1"># &quot;linear&quot;, &quot;pws&quot;, &quot;robust&quot;</span>
+
+            <span class="n">ngood_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ngood</span><span class="p">)</span>
+            <span class="n">stack_data_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stack_data</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ngood_results</span><span class="p">,</span> <span class="n">stack_data_results</span></div>
+
+
+<div class="viewcode-block" id="StackClass_python.run"><a class="viewcode-back" href="../../../../autoapi/noiseflow/cc/python/stack/index.html#noiseflow.cc.python.stack.StackClass_python.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Start stack with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="si">}</span><span class="s2"> jobs in python...&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># parallel processing</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">chunk_list</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;loky&quot;</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_chunk</span><span class="p">)(</span><span class="n">chunk_start</span><span class="p">,</span> <span class="n">chunk_end</span><span class="p">)</span> <span class="k">for</span> <span class="n">chunk_start</span><span class="p">,</span> <span class="n">chunk_end</span> <span class="ow">in</span> <span class="n">chunk_list</span><span class="p">)</span>
+
+            <span class="n">ngood_all_results</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">output_data_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">chunk_results</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+                <span class="n">ngood_all_chunk</span><span class="p">,</span> <span class="n">output_data_chunk</span> <span class="o">=</span> <span class="n">chunk_results</span>
+                <span class="n">ngood_all_results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ngood_all_chunk</span><span class="p">)</span>
+                <span class="n">output_data_results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">output_data_chunk</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">ngood_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ngood_all_results</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">output_data_results</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_dtype</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ngood_all_results</span><span class="p">,</span> <span class="n">output_data_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_chunk</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pair_num</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ngood_all</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ngood_all_results</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">output_data_results</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_dtype</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+            <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;End stack with total time </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span></div></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023-2023, Fu Yin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
