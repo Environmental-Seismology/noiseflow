@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "noiseflow"
-version = "0.0.1"
+version = "0.0.1a2"
 description = "An ambient noise package"
 authors = ["Fu Yin <oucyinfu@gmail.com>"]
 license = "BSD"
 readme = "README.md"
+include = ["CMakeLists.txt", "cmake/*"]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
@@ -15,6 +16,12 @@ obspy = "^1.4.0"
 stockwell = "^1.1"
 setuptools = "^58.0.4"
 numba = "^0.57.1"
+h5py = "^3.9.0"
+tqdm = "^4.65.0"
+joblib = "^1.2.0"
+tslearn = "^0.5.3.2"
+faker = "^18.11.2"
+retry = "^0.9.2"
 
 [tool.poetry.group.dev.dependencies]
 numpy = "^1.24.0"

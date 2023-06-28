@@ -1,7 +1,8 @@
 .DS_Store
-extern/*
 .vscode/*
 setup.py
+build/*
+dist/*
 
 
 # Byte-compiled / optimized / DLL files
