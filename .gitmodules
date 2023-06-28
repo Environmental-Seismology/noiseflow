@@ -4,3 +4,6 @@
 [submodule "extern/xtensor-fftw"]
 	path = extern/xtensor-fftw
 	url = https://gitclone.com/github.com/xtensor-stack/xtensor-fftw.git
+[submodule "extern1/xtensor-fftw"]
+	path = extern1/xtensor-fftw
+	url = https://github.com/xtensor-stack/xtensor-fftw
