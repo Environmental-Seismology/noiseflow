@@ -32,3 +32,8 @@ from noiseflow.client.client import downloader, downloader_https
 from noiseflow.dispersion import app_dispersion, test
 
 __all__ = ["wrapper", "dispersion", "tests"]
+
+
+
+
+__version__ = "0.0.1"

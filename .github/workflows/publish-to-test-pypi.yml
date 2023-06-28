@@ -1,9 +1,10 @@
-name: Publish Python 🐍 distributions 📦 to PyPI
+name: Publish Python 🐍 distributions 📦 to Test PyPI
 on:
-  release:
-    types: [published]
+  push:
+    branches:    
+      - 'test/**'
 jobs:
-  pypi:
+  testpypi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,5 +32,6 @@ jobs:
       - name: build and publish
         run: |
           NOISEFLOW_USE_CPP=1 poetry build
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry publish --repository testpypi --username yinfu --password ${{ secrets.TEST_PYPI_TOKEN }}
+
