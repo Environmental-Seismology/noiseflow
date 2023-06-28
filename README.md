@@ -104,7 +104,7 @@ git submodule add https://gitclone.com/github.com/kfrlib/kfr.git extern/kfr
 
 
 
-##
+## License
 Noiseflow is dual-licensed, available under both commercial and apache license.
 
 If you want to use noiseflow in a commercial product or a closed-source project, you need to purchase a Commercial License.
