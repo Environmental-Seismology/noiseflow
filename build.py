@@ -70,20 +70,11 @@ class CMakeBuild(build_ext):
 
 
 def check_env():
-    CXX = os.getenv('CXX', '')
     NOISEFLOW_USE_CPP = (os.getenv('NOISEFLOW_USE_CPP', '') == '1')
-    compile_time_env = {"NOISEFLOW_USE_CPP": NOISEFLOW_USE_CPP, "CXX": CXX}
-    
-    config_path = os.path.abspath(os.path.expanduser('~/.noiseflow_config.json'))
-
-    if os.path.exists(config_path):
-        os.remove(config_path)
-    
-    with open(config_path, 'w') as f:
-        json.dump(compile_time_env, f)
 
     ext_modules = []
     if NOISEFLOW_USE_CPP:
+        install_submodules()
         ext_modules.append(CMakeExtension('noiseflow/lib/'))
         try:
             import numpy
@@ -93,6 +84,9 @@ def check_env():
 
     return ext_modules
 
+
+def install_submodules():
+    subprocess.run(['git', 'submodule', 'update', '--init', '--recursive'])
 
 
 def build(setup_kwargs):

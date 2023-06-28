@@ -1,4 +1,21 @@
 # python modules
+import os
+import json
+
+config_path = os.path.abspath(os.path.expanduser('~/.noiseflow_config.json'))    
+
+try:
+    from noiseflow.lib import cc_share
+    from noiseflow.lib import signal_share
+    NOISEFLOW_USE_CPP = True
+except:
+    NOISEFLOW_USE_CPP = False
+
+compile_time_env = {"NOISEFLOW_USE_CPP": NOISEFLOW_USE_CPP}
+with open(config_path, 'w') as f:
+    json.dump(compile_time_env, f)
+
+
 from noiseflow.cc.wrapper import rfft, corr, stack
 from noiseflow.cc.rfftdata import RFFTData_Class
 from noiseflow.cc.corrdata import CorrData_Class
