@@ -99,6 +99,7 @@ conda install -c conda-forge stockwell
 
 NOISEFLOW_USE_CPP=1 pip install --no-binary :all: noiseflow --no-cache-dir
 
+git submodule add https://gitclone.com/github.com/kfrlib/kfr.git extern/kfr
 ```
 
 
