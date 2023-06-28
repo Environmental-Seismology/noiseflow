@@ -1,4 +1,0 @@
-
-
-def one():
-    print("one")
