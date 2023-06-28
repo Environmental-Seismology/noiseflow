@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "noiseflow"
+version = "0.0.1"
+description = "An ambient noise package"
+authors = ["Fu Yin <oucyinfu@gmail.com>"]
+license = "BSD"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+numpy = "^1.24.0"
+matplotlib = "^3.7.1"
+scipy = "^1.11.0"
+obspy = "^1.4.0"
+stockwell = "^1.1"
+setuptools = "^58.0.4"
+numba = "^0.57.1"
+
+[tool.poetry.group.dev.dependencies]
+numpy = "^1.24.0"
+scipy = "^1.11.0"
+matplotlib = "^3.7.1"
+setuptools = "^58.0.4"
+
+[tool.poetry.extras]
+cpp = ["fftw"]
+
+[build-system]
+requires = ["poetry-core", "setuptools", "numpy", "cmake"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.build]
+# The allows us to build C/C++/Fortran extensions, unstable feature now.
+script = "build.py"
+generate-setup-file = true
