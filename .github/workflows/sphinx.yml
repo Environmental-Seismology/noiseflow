@@ -23,7 +23,10 @@ jobs:
           echo "yinfu.info" > _build/html/CNAME
           cd ..
       - name: push to github page
+      if: ${{ !env.ACT }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.FU_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_build/html
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
