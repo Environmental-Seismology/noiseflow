@@ -23,7 +23,7 @@ jobs:
           echo "yinfu.info" > _build/html/CNAME
           cd ..
       - name: push to github page
-      if: ${{ !env.ACT }}
+        if: ${{ !env.ACT }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
