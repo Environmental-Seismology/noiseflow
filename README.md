@@ -40,7 +40,7 @@ git submodule update
 Note the `xtensor-fftw` do not support M1 chip, and if it is failed to install via conda, you can install it from source into conda environment as `$CONDA_PREFIX`
 
 ```bash
-cd ./extern/xtensor-fftw
+cd ./external/xtensor-fftw
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
 make install
@@ -51,7 +51,7 @@ make install
 The `KFR` package is C++ DSP framework, should be installed in `./extern/kfr` from source
 
 ```bash
-cd ./extern/kfr
+cd ./external/kfr
 mkdir build && cd build
 cmake ..
 make install
@@ -108,3 +108,37 @@ w
 Noiseflow is dual-licensed, available under both commercial and apache license.
 
 If you want to use noiseflow in a commercial product or a closed-source project, you need to purchase a Commercial License.
+
+
+
+`stockwell`: 'numpy>=1.18', scipy, fftw, ['cp36-*', 'cp37-*', 'cp38-*', 'cp39-*', 'cp310-*']
+
+
+
+## INSTALL (NOETS)
+- conda:
+
+
+
+```bash
+brew install fftw
+conda install -c conda-forge fftw(没用)
+conda install -c conda-forge pybind11 (头文件)
+conda install -c conda-forge xtensor xsimd xtl xtensor-blas xtensor-python (可能是静态库)
+```
+
+
+
+
+```bash
+cd ./external/xtensor-fftw
+mkdir build && cd build
+
+myenv = $(conda env list | grep ' \* ' | awk '{print $1}')
+conda_prefix = $(conda info --base)
+export CMAKE_PREFIX_PATH="${conda_prefix}/envs/${myenv}"
+
+
+cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DCMAKE_PREFIX_PATH=$CONDA_PREFIX
+make install
+```

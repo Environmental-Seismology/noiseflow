@@ -1,8 +1,9 @@
-# python modules
 import os
+import re
 import json
 
 env = os.environ.get('CONDA_DEFAULT_ENV')
+env = re.sub('[^a-zA-Z0-9_]', '', env)[0:50]
 config_path = os.path.abspath(os.path.expanduser(f'~/.noiseflow_config_{env}.json'))    
 
 try:

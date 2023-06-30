@@ -7,20 +7,30 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   build:
     - "{{ compiler('cxx') }}"
     - cmake
-    - ninja
+    - setuptools
+    - poetry-core
 
   host:
-    - python
-    - pip !=22.1.0
+    - python {{ python }}
+    - pip
+    - fftw
+    - cmake
 
   run:
-    - python
+    - python >=3.9
+    - fftw
+    - matplotlib
+    - scipy 
+    - numba
+    - h5py
+    - tqdm 
+    - joblib 
+    - faker 
 
 
 test:
@@ -28,11 +38,9 @@ test:
     - pytest
   imports:
     - noiseflow
-  source_files:
-    - tests
-  commands:
-    - python -m pytest
+
 
 about:
-  summary: A CMake example project built with pybind11.
+  summary: An ambient noise package.
+  license: Apache-2.0
   license_file: LICENSE

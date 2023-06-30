@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import numpy as np
 
@@ -9,6 +10,7 @@ from noiseflow.signal.python.filter import bandpass_py, bandstop_py, lowpass_py,
 
 # Determine the absolute path to the config file
 env = os.environ.get('CONDA_DEFAULT_ENV')
+env = re.sub('[^a-zA-Z0-9_]', '', env)[0:50]
 config_path = os.path.abspath(os.path.expanduser(f'~/.noiseflow_config_{env}.json'))    
 
 # Read the config.json file

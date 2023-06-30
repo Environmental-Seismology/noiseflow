@@ -32,6 +32,7 @@ Attributes
    noiseflow.signal.wrapper.config
    noiseflow.signal.wrapper.config_path
    noiseflow.signal.wrapper.env
+   noiseflow.signal.wrapper.env
 
 
 .. py:function:: bandpass(data, freqmin, freqmax, df, corners=4, zerophase=True, flag=False, flag_gap=None, threads=1, py=False)
@@ -65,6 +66,10 @@ Attributes
    
 
 .. py:data:: config_path
+
+   
+
+.. py:data:: env
 
    
 

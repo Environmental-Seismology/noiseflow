@@ -28,6 +28,7 @@ Attributes
    noiseflow.cc.wrapper.config
    noiseflow.cc.wrapper.config_path
    noiseflow.cc.wrapper.env
+   noiseflow.cc.wrapper.env
 
 
 .. py:function:: corr(rfft_data, dt, corr_method, corr_pair, maxlag, smoothspect_N=10, flag=False, flag_gap=None, threads=1, jobs=1, py=False)
@@ -49,6 +50,10 @@ Attributes
    
 
 .. py:data:: config_path
+
+   
+
+.. py:data:: env
 
    
 

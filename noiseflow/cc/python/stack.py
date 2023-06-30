@@ -1,19 +1,23 @@
 # The stack functions are from https://github.com/xtyangpsp/StackMaster
 
 import time
-import scipy
 import numpy as np
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm 
-from stockwell import st
-from itertools import compress
 from joblib import Parallel, delayed
+from itertools import compress
 from scipy.signal import hilbert
 from scipy.fftpack import fft,ifft,next_fast_len
-from tslearn.utils import to_time_series_dataset
-from tslearn.clustering import TimeSeriesKMeans
 from noiseflow.cc.python.utils import slice_window, split
+
+try:
+    from stockwell import st
+    from tslearn.utils import to_time_series_dataset
+    from tslearn.clustering import TimeSeriesKMeans
+except:
+    pass
+
 
 
 def rms(d):

@@ -47,9 +47,20 @@ endif()
 ###################################################################  
 #   Find Libraries
 ###################################################################  
-### numpy pybind11 xtensor xtl xsimd xtensor-blas xtensor-python
+### a. use find_package for numpy
 find_package(Python REQUIRED COMPONENTS Interpreter Development NumPy)
+### b. use execute_process for numpy
+# execute_process(
+#   COMMAND "${PYTHON_EXECUTABLE}"
+#   -c "import numpy; print(numpy.get_include())"
+#   OUTPUT_VARIABLE NumPy_INCLUDE_DIRS
+#   OUTPUT_STRIP_TRAILING_WHITESPACE
+# )
+
+# pybind11
 find_package(pybind11 REQUIRED CONFIG)
+
+# xtensor xtl xsimd xtensor-blas xtensor-python
 find_package(xtensor REQUIRED)
 find_package(xtl REQUIRED)
 find_package(xsimd REQUIRED)
@@ -58,19 +69,26 @@ find_package(xtensor-python REQUIRED)
 
 
 ### xtensor-fftw
+set(CMAKE_INSTALL_PREFIX $ENV{CONDA_PREFIX})
 set(FFTW_USE_FLOAT ON CACHE BOOL "Use float precision") # set fftw3 to use float precision
 set(FFTW_USE_DOUBLE ON CACHE BOOL "Use double precision") # set fftw3 to use double precision
 set(FFTW_USE_LONG_DOUBLE OFF CACHE BOOL "Use long double precision") # set fftw3 to use long double precision
-find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
+# find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
+
 
 
 ### FFTW3 using FindFFTW.cmake (note this command will seach some default path to find fftw3, for example the conda env path)
 set(CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX}) # set conda env path, we use conda to install fftw3
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/FindFFTW") # use FindFFTW.cmake to find fftw3
-find_package(FFTW REQUIRED)
+# add_subdirectory(${CMAKE_SOURCE_DIR}/external/xtensor-fftw EXCLUDE_FROM_ALL)
+include_directories("./external/xtensor-fftw/include")
+find_package(FFTW REQUIRED COMPONENTS ${REQUIRE_FLOAT_LIB} ${REQUIRE_DOUBLE_LIB} ${REQUIRE_LONG_DOUBLE_LIB})
 if(FFTW_FOUND)
     message(STATUS "FFTW Found!")
 endif()
+
+
+
 
 
 ### OpenBLAS and BLAS/LAPACK, which is xtensor-blas' dependencies
@@ -100,7 +118,8 @@ endif()
 
 
 ### KFR 
-# include_directories("./external/kfr/include")
+include_directories("./external/kfr/include")
+# add_subdirectory(${CMAKE_SOURCE_DIR}/external/kfr EXCLUDE_FROM_ALL)
 
 
 
@@ -111,20 +130,21 @@ endif()
 pybind11_add_module(cc_share ${CMAKE_SOURCE_DIR}/noiseflow/cc/src/pybind11.cpp)
 target_include_directories(cc_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/cc/src ${CMAKE_SOURCE_DIR}/noiseflow/cc/include)
 if(OPENMP_FOUND)
-    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
+    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX kfr) 
 else()
-    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy)
+    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python)
 endif()
 
 
 pybind11_add_module(signal_share ${CMAKE_SOURCE_DIR}/noiseflow/signal/src/pybind11.cpp)
-target_include_directories(signal_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/signal/src ${CMAKE_SOURCE_DIR}/noiseflow/signal/include) # pybind11.cpp needs to include noiseflow/fft_corr/src and noiseflow/fft_corr/include files
+target_include_directories(signal_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/signal/src ${CMAKE_SOURCE_DIR}/noiseflow/signal/include)
 if(OPENMP_FOUND)
     target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX)
 else()
-    target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy)
+    target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python)
 endif()
 
 
+### setup.py will install the module to the python site-packages
 # install(TARGETS cc_share DESTINATION lib)
 # install(TARGETS signal_share DESTINATION lib)
