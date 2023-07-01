@@ -53,7 +53,7 @@ The `KFR` package is C++ DSP framework, should be installed in `./extern/kfr` fr
 ```bash
 cd ./external/kfr
 mkdir build && cd build
-cmake ..
+cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
 make install
 ```
 

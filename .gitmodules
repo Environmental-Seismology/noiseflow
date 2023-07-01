@@ -1,4 +1,24 @@
-[submodule "external/xtensor-python"]
-	path = external/xtensor-python
+[submodule "extern/pybind11"]
+	path = extern/pybind11
+	url = https://github.com/pybind/pybind11
+[submodule "extern/xtensor"]
+	path = extern/xtensor
+	url = https://github.com/xtensor-stack/xtensor
+[submodule "extern/xtl"]
+	path = extern/xtl
+	url = https://github.com/xtensor-stack/xtl
+[submodule "extern/xsimd"]
+	path = extern/xsimd
+	url = https://github.com/xtensor-stack/xsimd
+[submodule "extern/xtensor-python"]
+	path = extern/xtensor-python
 	url = https://github.com/xtensor-stack/xtensor-python
-
+[submodule "extern/xtensor-blas"]
+	path = extern/xtensor-blas
+	url = https://github.com/xtensor-stack/xtensor-blas
+[submodule "extern/xtensor-fftw"]
+	path = extern/xtensor-fftw
+	url = https://github.com/xtensor-stack/xtensor-fftw
+[submodule "extern/kfr"]
+	path = extern/kfr
+	url = https://github.com/kfrlib/kfr.git
