@@ -87,20 +87,24 @@ def check_libomp_installed():
 #############################################
 channel = get_channel()
 
+if channel not in ['source', 'conda', 'github-actions']:
+    raise ValueError('The parameter `-c` [channel] must be `source`, `conda`, or `github-actions`')
+
 
 
 
 #############################################
 #### 2. install libomp via brew only for mac
 #############################################
-if platform.system() == "Darwin":
-    if check_libomp_installed() == False:
-        try:
-            os.system('brew install libomp')
-        except:
-            print("An error occurred while installing libomp via brew")
-    else:
-        print("libomp has already been installed via brew")
+if channel != 'github-actions':
+    if platform.system() == "Darwin":
+        if check_libomp_installed() == False:
+            try:
+                os.system('brew install libomp')
+            except:
+                print("An error occurred while installing libomp via brew")
+        else:
+            print("libomp has already been installed via brew")
 
 
 
@@ -108,20 +112,21 @@ if platform.system() == "Darwin":
 #############################################
 #### 3. must be from conda-forge
 #############################################
-cmake_version, cmake_channel = get_conda_package_info('cmake')
-print(f'cmake version is {cmake_version} from {cmake_channel}')
-if cmake_version == None:
-    os.system('conda install -y -c conda-forge cmake'  )
+if channel != 'github-actions':
+    cmake_version, cmake_channel = get_conda_package_info('cmake')
+    print(f'cmake version is {cmake_version} from {cmake_channel}')
+    if cmake_version == None:
+        os.system('conda install -y -c conda-forge cmake'  )
     
-fftw_version, fftw_channel = get_conda_package_info('fftw')
-print(f'fftw version is {fftw_version} from {fftw_channel}')
-if fftw_version == None:
-    os.system('conda install -y -c conda-forge fftw'  )
+    fftw_version, fftw_channel = get_conda_package_info('fftw')
+    print(f'fftw version is {fftw_version} from {fftw_channel}')
+    if fftw_version == None:
+        os.system('conda install -y -c conda-forge fftw'  )
 
-pybind11_version, pybind11_channel = get_conda_package_info('pybind11')
-print(f'pybind11 version is {pybind11_version} from {pybind11_channel}')
-if pybind11_version == None:
-    os.system('conda install -y -c conda-forge pybind11'  )
+    pybind11_version, pybind11_channel = get_conda_package_info('pybind11')
+    print(f'pybind11 version is {pybind11_version} from {pybind11_channel}')
+    if pybind11_version == None:
+        os.system('conda install -y -c conda-forge pybind11'  )
 
 
 
@@ -144,7 +149,7 @@ if channel == 'conda':
     print(f'xtl version is {xtl_version} from {xtl_channel}')
     if xtl_version == None:
         os.system('conda install -y -c conda-forge xtl' )
-    
+
     xtensor_blas_version, xtensor_blas_channel = get_conda_package_info('xtensor-blas')
     print(f'xtensor-blas version is {xtensor_blas_version} from {xtensor_blas_channel}')
     if xtensor_blas_version == None:
@@ -187,8 +192,6 @@ elif channel == 'source':
                    && cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX \
                    && make install" )
 
-else:
-    raise ValueError('The parameter `-c` [channel] must be `source` or `conda`')
 
 
 

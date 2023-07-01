@@ -75,14 +75,12 @@ set(FFTW_USE_LONG_DOUBLE OFF CACHE BOOL "Use long double precision") # set fftw3
 find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
 
 
-
 ### FFTW3 using FindFFTW.cmake (note this command will seach some default path to find fftw3, for example the conda env path)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/extern/xtensor-fftw/cmake/Modules/findFFTW") # use FindFFTW.cmake to find fftw3
 find_package(FFTW REQUIRED COMPONENTS ${REQUIRE_FLOAT_LIB} ${REQUIRE_DOUBLE_LIB} ${REQUIRE_LONG_DOUBLE_LIB})
 if(FFTW_FOUND)
     message(STATUS "FFTW Found!")
 endif()
-
 
 
 ### OpenBLAS and BLAS/LAPACK, which is xtensor-blas' dependencies
@@ -112,7 +110,7 @@ endif()
 
 
 ### KFR 
-include_directories("./extern/kfr/include")
+# include_directories("./extern/kfr/include")
 
 
 

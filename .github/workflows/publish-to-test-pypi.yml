@@ -1,40 +1,93 @@
 name: Publish Python 🐍 distributions 📦 to Test PyPI
+
 on:
   push:
     branches:    
       - 'test/**'
+
 jobs:
   testpypi:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+        python-version: [3.9, '3.10', '3.11']
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up python
-        id: setup-python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.2.2
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-      - name: Install cpp dependencies
-        run: |
-          python build_extern.py
-      - name: Install poetry dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-      - name: build and publish
-        run: |
-          NOISEFLOW_USE_CPP=1 poetry build
-          poetry config repositories.testpypi https://test.pypi.org/legacy/
-          poetry publish --repository testpypi --username yinfu --password ${{ secrets.TEST_PYPI_TOKEN }}
+    - uses: actions/checkout@v2
+
+
+    - name: Set up Python with Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        miniconda-version: "latest"
+        python-version: ${{ matrix.python-version }}
+        channels: conda-forge, defaults
+        auto-update-conda: true
+
+
+    - name: Create and activate conda environment
+      run: |
+        conda create --name noiseflow python=${{ matrix.python-version }}
+        echo "conda activate noiseflow" >> $GITHUB_ENV
+
+
+    - name: Cache Conda
+      uses: actions/cache@v2
+      with:
+        path: ~/miniconda/pkgs
+        key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
+      
+        
+    - name: Install conda dependencies
+      run: |
+        conda install -y -c conda-forge cmake
+        conda install -y -c conda-forge fftw
+        conda install -y -c conda-forge xtensor 
+        conda install -y -c conda-forge xsimd==8.0.5
+        conda install -y -c conda-forge xtl
+        conda install -y -c conda-forge xtensor-blas
+        conda install -y -c conda-forge xtensor-python
+        python build_extern.py -c github-actions
+
+  
+    - name: Set up Homebrew
+      if: runner.os == 'macOS'
+      uses: Homebrew/actions/setup-homebrew@master
+
+
+    - name: Install Homebrew dependencies
+      if: runner.os == 'macOS'
+      run: |
+        brew install libomp
+  
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: 1.2.2
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        installer-parallel: true
+
+
+    - name: Cache Poetry
+      id: cached-poetry-dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pypoetry
+        key: venv-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+        
+    - name: Install poetry dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction
+
+
+    - name: build and publish
+      run: |
+        NOISEFLOW_USE_CPP=1 poetry build
+        poetry config repositories.testpypi https://test.pypi.org/legacy/
+        poetry publish --repository testpypi --username yinfu --password ${{ secrets.TEST_PYPI_TOKEN }}
 
