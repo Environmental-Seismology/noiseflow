@@ -1,0 +1,13 @@
+name: noiseflow
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - cmake=3.18.0
+  - fftw=3.3.10
+  - pybind11=2.10.4
+  - xtensor=0.24.6
+  - xsimd=8.0.5
+  - xtl=0.7.5
+  - xtensor-blas=0.20.0
+  - xtensor-python=0.26.1
