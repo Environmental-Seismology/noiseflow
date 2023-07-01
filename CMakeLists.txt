@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.18)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-Wall -g -fPIC -O3")
 set(XTENSOR_USE_XSIMD 1) # set xtensor to use xsimd for SIMD optimization
+set(CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX}) # set conda env path, so that cmake can find those libraries in conda env
 
 
 
@@ -47,9 +48,9 @@ endif()
 ###################################################################  
 #   Find Libraries
 ###################################################################  
-### a. use find_package for numpy
+### [a]. use find_package for numpy
 find_package(Python REQUIRED COMPONENTS Interpreter Development NumPy)
-### b. use execute_process for numpy
+### [b]. use execute_process for numpy
 # execute_process(
 #   COMMAND "${PYTHON_EXECUTABLE}"
 #   -c "import numpy; print(numpy.get_include())"
@@ -57,10 +58,9 @@ find_package(Python REQUIRED COMPONENTS Interpreter Development NumPy)
 #   OUTPUT_STRIP_TRAILING_WHITESPACE
 # )
 
-# pybind11
-find_package(pybind11 REQUIRED CONFIG)
 
-# xtensor xtl xsimd xtensor-blas xtensor-python
+### pybind11 xtensor xtl xsimd xtensor-blas xtensor-python
+find_package(pybind11 REQUIRED CONFIG)
 find_package(xtensor REQUIRED)
 find_package(xtl REQUIRED)
 find_package(xsimd REQUIRED)
@@ -69,25 +69,19 @@ find_package(xtensor-python REQUIRED)
 
 
 ### xtensor-fftw
-set(CMAKE_INSTALL_PREFIX $ENV{CONDA_PREFIX})
 set(FFTW_USE_FLOAT ON CACHE BOOL "Use float precision") # set fftw3 to use float precision
 set(FFTW_USE_DOUBLE ON CACHE BOOL "Use double precision") # set fftw3 to use double precision
 set(FFTW_USE_LONG_DOUBLE OFF CACHE BOOL "Use long double precision") # set fftw3 to use long double precision
-# find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
+find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
 
 
 
 ### FFTW3 using FindFFTW.cmake (note this command will seach some default path to find fftw3, for example the conda env path)
-set(CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX}) # set conda env path, we use conda to install fftw3
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/FindFFTW") # use FindFFTW.cmake to find fftw3
-# add_subdirectory(${CMAKE_SOURCE_DIR}/external/xtensor-fftw EXCLUDE_FROM_ALL)
-include_directories("./external/xtensor-fftw/include")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/extern/xtensor-fftw/cmake/Modules/findFFTW") # use FindFFTW.cmake to find fftw3
 find_package(FFTW REQUIRED COMPONENTS ${REQUIRE_FLOAT_LIB} ${REQUIRE_DOUBLE_LIB} ${REQUIRE_LONG_DOUBLE_LIB})
 if(FFTW_FOUND)
     message(STATUS "FFTW Found!")
 endif()
-
-
 
 
 
@@ -118,8 +112,7 @@ endif()
 
 
 ### KFR 
-include_directories("./external/kfr/include")
-# add_subdirectory(${CMAKE_SOURCE_DIR}/external/kfr EXCLUDE_FROM_ALL)
+include_directories("./extern/kfr/include")
 
 
 
@@ -130,7 +123,7 @@ include_directories("./external/kfr/include")
 pybind11_add_module(cc_share ${CMAKE_SOURCE_DIR}/noiseflow/cc/src/pybind11.cpp)
 target_include_directories(cc_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/cc/src ${CMAKE_SOURCE_DIR}/noiseflow/cc/include)
 if(OPENMP_FOUND)
-    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX kfr) 
+    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
 else()
     target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python)
 endif()
