@@ -108,5 +108,5 @@ jobs:
         echo "NOISEFLOW_USE_CPP=1" >> $GITHUB_ENV
         poetry build
         poetry config repositories.testpypi https://test.pypi.org/legacy/
-        poetry publish --repository testpypi --username yinfu --password ${{ secrets.TEST_PYPI_TOKEN }}
+        poetry publish --repository testpypi --username __token__ --password ${{ secrets.TEST_PYPI_TOKEN }}
 
