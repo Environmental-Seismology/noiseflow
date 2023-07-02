@@ -9,6 +9,7 @@ jobs:
   testpypi:
 
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
         python-version: [3.9, '3.10', '3.11']
@@ -91,10 +92,12 @@ jobs:
 
     - name: Build and Publish
       run: |
+        python --version
         CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build
         if [[ "${{ matrix.os }}" != "macos-latest" || "${{ matrix.python-version }}" != "3.10" ]]; then
           rm dist/*.tar.gz
         fi
+        python --version
         poetry config repositories.test-pypi https://test.pypi.org/legacy/
         poetry publish --repository test-pypi --username __token__ --password ${{ secrets.TEST_PYPI_TOKEN }}
 
