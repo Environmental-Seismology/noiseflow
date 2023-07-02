@@ -92,12 +92,12 @@ jobs:
 
     - name: Build and Publish
       run: |
-        python --version
-        CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build
-        if [[ "${{ matrix.os }}" != "macos-latest" || "${{ matrix.python-version }}" != "3.10" ]]; then
-          rm dist/*.tar.gz
+        if [[ "${{ matrix.os }}" == "macos-latest" && "${{ matrix.python-version }}" == "3.10" ]]; then
+          CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build
+        else
+          CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build -f wheel
         fi
-        python --version
+        poetry env info
         poetry config repositories.test-pypi https://test.pypi.org/legacy/
         poetry publish --repository test-pypi --username __token__ --password ${{ secrets.TEST_PYPI_TOKEN }}
 
