@@ -72,7 +72,8 @@ find_package(xtensor-python REQUIRED)
 set(FFTW_USE_FLOAT ON CACHE BOOL "Use float precision") # set fftw3 to use float precision
 set(FFTW_USE_DOUBLE ON CACHE BOOL "Use double precision") # set fftw3 to use double precision
 set(FFTW_USE_LONG_DOUBLE OFF CACHE BOOL "Use long double precision") # set fftw3 to use long double precision
-find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
+# find_package(xtensor-fftw REQUIRED) # this command must be after set(FFTW_USE_FLOAT ON CACHE BOOL "Use double precision")
+include_directories("./extern/xtensor-fftw/include")
 
 
 ### FFTW3 using FindFFTW.cmake (note this command will seach some default path to find fftw3, for example the conda env path)
@@ -110,7 +111,7 @@ endif()
 
 
 ### KFR 
-# include_directories("./extern/kfr/include")
+include_directories("./extern/kfr/include")
 
 
 
