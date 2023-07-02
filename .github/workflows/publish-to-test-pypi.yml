@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        python-version: [3.8, 3.9, '3.10', '3.11']
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [3.9, '3.10', '3.11']
         include:
           - os: ubuntu-latest
             cxx: g++
@@ -22,6 +22,10 @@ jobs:
             cxx: clang++
             cc: clang
             label: osx-64
+          - os: windows-latest
+            cxx: cl
+            cc: cl
+            label: win-64
     
 
     name: ${{ matrix.label }}-Python-${{ matrix.python-version }}
@@ -65,7 +69,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/miniconda3/envs
-        key: ${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
+        key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
       
           
     - name: Install Conda Dependencies
@@ -88,7 +92,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .venv
-        key: venv-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+        key: poetry-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
 
     - name: Install Poetry Dependencies
@@ -103,7 +107,7 @@ jobs:
 
     - name: Build and Publish
       run: |
-        if [[ "${{ matrix.os }}" == "macos-latest" && "${{ matrix.python-version }}" == "3.10" ]]; then
+        if [[ "${{ matrix.os }}" == "macos-latest" && "${{ matrix.python-version }}" == "3.11" ]]; then
           CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build
         else
           CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build -f wheel

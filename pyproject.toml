@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "noiseflow"
-version = "0.0.3a"
+version = "0.0.4"
 description = "An ambient noise package"
 authors = ["Fu Yin <oucyinfu@gmail.com>"]
 license = "Apache-2.0"
@@ -24,7 +24,7 @@ classifiers = [
     ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12"
+python = ">=3.9,<3.12"
 numpy = "^1.25.0"
 scipy = "1.10.1"
 matplotlib = "^3.7.1"

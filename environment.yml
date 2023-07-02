@@ -1,4 +1,4 @@
-name: noiseflow-f
+name: noiseflow
 channels:
   - conda-forge
 dependencies:
