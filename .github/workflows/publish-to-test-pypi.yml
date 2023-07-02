@@ -7,48 +7,64 @@ on:
 
 jobs:
   testpypi:
+
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest]
         python-version: [3.9, '3.10', '3.11']
-
+        include:
+          - os: ubuntu-latest
+            cxx: g++
+            cc: gcc
+            label: linux-64
+            prefix: /usr/share/miniconda3/envs/my-env
+          - os: macos-latest
+            cxx: clang++
+            cc: clang
+            label: osx-64
+            prefix: /Users/runner/miniconda3/envs/my-env
+    
+            
+    name: ${{ matrix.label }}-Python-${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
+
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
 
     steps:
     - uses: actions/checkout@v2
 
 
-    - name: Set up Python with Miniconda
+    - name: Cache Conda
+      uses: actions/cache@v2
+      with:
+        path: ${{ matrix.prefix }}
+        key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
+      id: cached-conda-dependencies
+
+
+    - name: Update environment
+      if: steps.cached-conda-dependencies.outputs.cache-hit != 'true'
+      run: conda env update -n noiseflow -f environment.yml
+   
+
+    - name: Set up conda environment with Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniconda-version: "latest"
         python-version: ${{ matrix.python-version }}
         channels: conda-forge, defaults
         auto-update-conda: true
+        auto-activate-base: false
+        use-only-tar-bz2: true
+        activate-environment: noiseflow
+        environment-file: environment.yml
 
 
-    - name: Create and activate conda environment
+    - name: Install some dependencies from github source
       run: |
-        conda create --name noiseflow python=${{ matrix.python-version }}
-        echo "conda activate noiseflow" >> $GITHUB_ENV
-
-
-    - name: Cache Conda
-      uses: actions/cache@v2
-      with:
-        path: ~/miniconda/pkgs
-        key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
-      
-        
-    - name: Install conda dependencies
-      run: |
-        conda install -y -c conda-forge cmake
-        conda install -y -c conda-forge fftw
-        conda install -y -c conda-forge xtensor 
-        conda install -y -c conda-forge xsimd==8.0.5
-        conda install -y -c conda-forge xtl
-        conda install -y -c conda-forge xtensor-blas
-        conda install -y -c conda-forge xtensor-python
         python build_extern.py -c github-actions
 
   
@@ -72,11 +88,11 @@ jobs:
         installer-parallel: true
 
 
-    - name: Cache Poetry
+    - name: Cache Poetry venv
       id: cached-poetry-dependencies
       uses: actions/cache@v2
       with:
-        path: ~/.cache/pypoetry
+        path: .venv
         key: venv-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
         
@@ -87,7 +103,9 @@ jobs:
 
     - name: build and publish
       run: |
-        NOISEFLOW_USE_CPP=1 poetry build
+        echo "CXX=${{ matrix.cxx }}" >> $GITHUB_ENV
+        echo "NOISEFLOW_USE_CPP=1" >> $GITHUB_ENV
+        poetry build
         poetry config repositories.testpypi https://test.pypi.org/legacy/
         poetry publish --repository testpypi --username yinfu --password ${{ secrets.TEST_PYPI_TOKEN }}
 
