@@ -1,11 +1,9 @@
 name: noiseflow
-
 channels:
   - conda-forge
 dependencies:
   - cmake >=3.18.0
   - fftw >=3.3.10
-  - openblas # only for windows
   - pybind11 >=2.10.4
   - xtensor
   - xsimd =8.0.5
