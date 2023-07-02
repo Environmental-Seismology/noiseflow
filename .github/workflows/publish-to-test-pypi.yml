@@ -102,20 +102,6 @@ jobs:
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction
 
-    - name: Print Python and Conda Info
-      run: |
-        python -c "import sys; print(sys.executable)"
-        conda info --envs
-        conda list numpy
-        conda list cmake
-        which cmake
-
-    - name: Confirm NumPy Installation
-      run: |
-        conda activate noiseflow
-        python -c "import numpy; print(numpy.__version__)"
-        which cmake
-        conda list
 
     - name: Install Source-Code from Github
       run: |
