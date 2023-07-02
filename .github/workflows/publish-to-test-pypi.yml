@@ -10,6 +10,7 @@ jobs:
 
     strategy:
       matrix:
+        os: [ubuntu-latest, macos-latest]
         python-version: [3.9, '3.10', '3.11']
         include:
           - os: ubuntu-latest
@@ -23,7 +24,7 @@ jobs:
             label: osx-64
             prefix: /Users/runner/miniconda3/envs/my-env
     
-            
+
     name: ${{ matrix.label }}-Python-${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
@@ -38,19 +39,14 @@ jobs:
 
 
     - name: Cache Conda
+      id: cached-conda-dependencies
       uses: actions/cache@v2
       with:
         path: ${{ matrix.prefix }}
         key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/environment.yml') }}
-      id: cached-conda-dependencies
+      
 
-
-    - name: Update environment
-      if: steps.cached-conda-dependencies.outputs.cache-hit != 'true'
-      run: conda env update -n noiseflow -f environment.yml
-   
-
-    - name: Set up conda environment with Miniconda
+    - name: Set up Conda Environment with Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniconda-version: "latest"
@@ -63,7 +59,12 @@ jobs:
         environment-file: environment.yml
 
 
-    - name: Install some dependencies from github source
+    - name: Update Conda Environment
+      if: steps.cached-conda-dependencies.outputs.cache-hit != 'true'
+      run: conda env update -n noiseflow -f environment.yml
+     
+
+    - name: Install Source-Code from Github
       run: |
         python build_extern.py -c github-actions
 
@@ -73,7 +74,7 @@ jobs:
       uses: Homebrew/actions/setup-homebrew@master
 
 
-    - name: Install Homebrew dependencies
+    - name: Install Homebrew Dependencies
       if: runner.os == 'macOS'
       run: |
         brew install libomp
@@ -96,12 +97,12 @@ jobs:
         key: venv-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
         
-    - name: Install poetry dependencies
+    - name: Install Poetry Dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction
 
 
-    - name: build and publish
+    - name: Build and Publish
       run: |
         echo "CXX=${{ matrix.cxx }}" >> $GITHUB_ENV
         echo "NOISEFLOW_USE_CPP=1" >> $GITHUB_ENV
