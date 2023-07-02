@@ -118,7 +118,7 @@ If you want to use noiseflow in a commercial product or a closed-source project,
 ## INSTALL (NOETS)
 - conda:
 
-
+1
 
 ```bash
 brew install fftw
