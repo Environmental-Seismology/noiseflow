@@ -59,7 +59,7 @@ jobs:
 
     - name: Cache Conda Env
       id: cached-conda-dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       env:
         CACHE_NUMBER: 0 # Increase this value to reset cache if etc/example-environment.yml has not changed
       with:
@@ -83,7 +83,7 @@ jobs:
 
     - name: Cache Poetry Env
       id: cached-poetry-dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: .venv
         key: poetry-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
