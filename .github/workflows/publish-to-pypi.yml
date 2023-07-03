@@ -2,43 +2,110 @@ name: Publish Python 🐍 distributions 📦 to PyPI
 on:
   release:
     types: [published]
+
 jobs:
   pypi:
-    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.10', '3.11']
+        exclude:
+          - os: windows-latest
+            python-version: '3.9'
+        include:
+          - os: ubuntu-latest
+            cc: gcc
+            cxx: g++
+            label: linux-64
+          - os: macos-latest
+            cc: clang
+            cxx: clang++
+            label: osx-64
+          - os: windows-latest
+            cc: cl
+            cxx: cl
+            label: win-64
+    
+    name: ${{ matrix.label }}-Python-${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Set up python
-        id: setup-python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
+    - uses: actions/checkout@v2
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.2.2
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
+    - name: Setup Homebrew
+      if: runner.os == 'macOS'
+      uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-      
-      - name: Install cpp dependencies
-        run: |
-          python build_extern.py
-      
-      - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
+    - name: Install Homebrew Dependencies
+      if: runner.os == 'macOS'
+      run: |
+        brew install libomp
 
-      - name: build and publish
-        run: |
-          NOISEFLOW_USE_CPP=1 poetry build
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish
+    - name: Setup Conda Environment with Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        miniconda-version: latest
+        python-version: ${{ matrix.python-version }}
+        activate-environment: noiseflow
+
+    - name: Set Conda Cache Date
+      run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
+    - name: Cache Conda Env
+      id: cached-conda-dependencies
+      uses: actions/cache@v2
+      env:
+        CACHE_NUMBER: 0 # Increase this value to reset cache if etc/example-environment.yml has not changed
+      with:
+        path: ${{ env.CONDA }}/envs
+        key: conda-${{ runner.os }}-python${{ matrix.python-version }}-${{ env.DATE }}-${{ hashFiles('**/environment.yml') }}-${{ env.CACHE_NUMBER }}
+      
+    - name: Install Conda Dependencies
+      if: steps.cached-conda-dependencies.outputs.cache-hit != 'true'
+      run: |
+        if [[ "${{ matrix.os }}" != "windows-latest" ]]; then
+          conda env update -n noiseflow -f environment.yml
+        fi
+
+    - name: Setup Poetry in Conda Environment
+      uses: snok/install-poetry@v1
+      with:
+        version: latest 
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        installer-parallel: true
+
+    - name: Cache Poetry Env
+      id: cached-poetry-dependencies
+      uses: actions/cache@v2
+      with:
+        path: .venv
+        key: poetry-${{ runner.os }}-python${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Install Poetry Dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction
+
+    - name: Install Source-Code from Github
+      run: |
+        if [[ "${{ matrix.os }}" != "windows-latest" ]]; then
+          CC=${{ matrix.cc }} CXX=${{ matrix.cxx }} python build_extern.py -c github-actions
+        fi
+
+    - name: Build and Publish
+      run: |
+        if [[ "${{ matrix.os }}" == "macos-latest" && "${{ matrix.python-version }}" == "3.11" ]]; then
+          CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build
+        elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+          poetry build -f wheel
+        else
+          CXX=${{ matrix.cxx }} NOISEFLOW_USE_CPP=1 poetry build -f wheel
+        fi
+        poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+        poetry publish
