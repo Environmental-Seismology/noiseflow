@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "noiseflow"
-version = "0.0.4"
+version = "0.0.5"
 description = "An ambient noise package"
 authors = ["Fu Yin <oucyinfu@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 include = ["CMakeLists.txt", "cmake/*", ".gitmodules"]
 classifiers = [
-        "Development Status :: Production/Development",
+        "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
         "Environment :: GPU",
         "Intended Audience :: Science/Research",
