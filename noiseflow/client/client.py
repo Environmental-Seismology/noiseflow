@@ -1,10 +1,14 @@
 import os
 import requests
+
 from tqdm import tqdm
-from faker import Faker
-from retry import retry
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+try:
+    from faker import Faker
+except:
+    print("Please install faker via pip install faker")
 
 
 cpu_cores = os.cpu_count()
@@ -17,7 +21,6 @@ def downloader(url, type='https', show_info = True, resume=True, filename=None, 
         d.download()
     else:
         pass
-
 
 
 class downloader_https():
@@ -47,7 +50,6 @@ class downloader_https():
             self.header = header
 
  
-    @retry(tries=3)
     def check_url(self):
         """
         check url support break-point resume and support multi-thread downloading
@@ -91,7 +93,6 @@ class downloader_https():
         return _range
 
 
-    @retry(tries=5)
     def download_by_piece(self, _range):
         start, stop = _range
         headers = {**self.header, **{"Range": f"bytes={start}-{stop}"}} # merge
