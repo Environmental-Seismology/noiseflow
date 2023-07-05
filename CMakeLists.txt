@@ -99,10 +99,9 @@ if(APPLE AND "${CMAKE_CXX_COMPILER_ID}" MATCHES "AppleClang" OR "${CMAKE_CXX_COM
     set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${BREW_PREFIX}/opt/libomp/include")
     set(OpenMP_CXX_LIB_NAMES "omp")
     set(OpenMP_omp_LIBRARY "${BREW_PREFIX}/opt/libomp/lib")
-    find_package(OpenMP REQUIRED)
-else()
-    find_package(OpenMP REQUIRED)
 endif()
+find_package(OpenMP REQUIRED)
+
 
 
 ### KFR 

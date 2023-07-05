@@ -142,3 +142,20 @@ export CMAKE_PREFIX_PATH="${conda_prefix}/envs/${myenv}"
 cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DCMAKE_PREFIX_PATH=$CONDA_PREFIX
 make install
 ```
+
+
+
+### [build-system]
+cmake = '^3.18.0'
+fftw = '^3.3.10'
+pybind11 = '^2.10.4'
+xtensor = '^0.24.6'
+xsimd = '8.0.5' # when the version is larger than 8.0.5, it will got error in compiling stage.
+xtl = '^0.7.5'
+xtensor_blas = '^0.20.0'
+xtensor_python = '^0.26.1'
+xtensor_fftw = '^0.2.6' # not show in conda env
+kfr = '^5.0.2' # not show in conda env
+
+### [optional-for-mac]
+libomp = '^16.0.6' # via brew

@@ -40,15 +40,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Homebrew
-      if: runner.os == 'macOS'
-      uses: Homebrew/actions/setup-homebrew@master
-
-    - name: Install Homebrew Dependencies
-      if: runner.os == 'macOS'
-      run: |
-        brew install libomp
-
     - name: Setup Conda Environment with Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
@@ -97,7 +88,7 @@ jobs:
     - name: Install Source-Code from Github
       run: |
         if [[ "${{ matrix.os }}" != "windows-latest" ]]; then
-          CC=${{ matrix.cc }} CXX=${{ matrix.cxx }} python build_extern.py -c github-actions
+          git submodule update --init --recursive
         fi
 
     - name: Build and Publish

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "noiseflow"
-version = "0.0.6"
+version = "0.0.6b"
 description = "An ambient noise package"
 authors = ["Fu Yin <oucyinfu@gmail.com>"]
 license = "Apache-2.0"
@@ -28,10 +28,11 @@ python = ">=3.9,<3.12"
 numpy = "^1.25.0"
 scipy = "1.10.1"
 matplotlib = "^3.7.1"
-obspy = "^1.4.0"
 h5py = "^3.9.0"
 joblib = "^1.3.1"
 tqdm = "^4.65.0"
+obspy = "^1.4.0"
+faker = "^18.11.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^6.3.2"
@@ -50,7 +51,7 @@ sphinx-copybutton = "^0.5.0"
 
 [tool.poetry.extras]
 cpp = ["fftw"]
-# faker = "^18.11.2"
+
 
 
 [build-system]

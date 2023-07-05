@@ -1,0 +1,6 @@
+[submodule "extern/xtensor-fftw"]
+	path = extern/xtensor-fftw
+	url = https://github.com/xtensor-stack/xtensor-fftw
+[submodule "extern/kfr"]
+	path = extern/kfr
+	url = https://github.com/kfrlib/kfr

@@ -2,13 +2,9 @@ import os
 import requests
 
 from tqdm import tqdm
+from faker import Faker
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-try:
-    from faker import Faker
-except:
-    print("Please install faker via pip install faker")
 
 
 cpu_cores = os.cpu_count()
