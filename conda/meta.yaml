@@ -1,6 +1,6 @@
 {% set org = "Environmental-Seismology" %}
 {% set name = "noiseflow" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.6a" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e84276bee22d7f8f67640ee94faec1a079f0336b2311ab12acbe41756c28178b
+  sha256: ea3b6f13df02bf347abddd979bfa146168c8c56585e1a06b5bcce942107d92d9
 
 build:
   number: 0
@@ -23,7 +23,6 @@ requirements:
     - setuptools
     - poetry-core
     - pip
-    - obspy
 
   host:
     - python
@@ -31,12 +30,11 @@ requirements:
     - pip
     - fftw
     - pybind11
-    - obspy
-    # - xtensor
-    # - xtensor-python
-    # - xsimd
-    # - xtl 
-    # - xtensor-blas
+    - xtensor
+    - xtensor-python
+    - xsimd
+    - xtl 
+    - xtensor-blas
 
   run:
     - python >=3.9
@@ -47,6 +45,7 @@ requirements:
     - joblib 
     - tqdm 
     - obspy
+    - faker
     
 
 

@@ -93,7 +93,7 @@ message(STATUS "BLAS LIBRARIES: " ${BLAS_LIBRARIES})
 
 
 ### OpenMP (clang doesn't bring openmp, you need to install it by brew, and find_package can't find it, you need to set the PATH as below. refer to https://www.kancloud.cn/csyangbinbin/cmake-cookbook1/2157938  https://iscinumpy.gitlab.io/post/omp-on-high-sierra/)
-if(APPLE AND "${CMAKE_CXX_COMPILER_ID}" MATCHES "AppleClang")
+if(APPLE AND "${CMAKE_CXX_COMPILER_ID}" MATCHES "AppleClang" OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
     message(STATUS "Using AppleClang in mac will set brew lib path for OpenMP")
     execute_process(COMMAND brew --prefix OUTPUT_VARIABLE BREW_PREFIX OUTPUT_STRIP_TRAILING_WHITESPACE)
     set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${BREW_PREFIX}/opt/libomp/include")
