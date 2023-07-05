@@ -52,8 +52,6 @@ sphinx-copybutton = "^0.5.0"
 [tool.poetry.extras]
 cpp = ["fftw"]
 
-
-
 [build-system]
 requires = ["poetry-core", "setuptools", "cmake", "numpy"]
 build-backend = "poetry.core.masonry.api"
@@ -62,8 +60,4 @@ build-backend = "poetry.core.masonry.api"
 # The allows us to build C/C++/Fortran extensions, unstable feature now.
 script = "build_cmake.py"
 generate-setup-file = true
-
-
-
-
 

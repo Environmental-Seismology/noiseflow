@@ -59,6 +59,29 @@ find_package(Python REQUIRED COMPONENTS Interpreter Development NumPy)
 # )
 
 
+### OpenMP, check if the BREW_OPENMP environment variable is set (clang doesn't bring openmp, you need to install it by brew, and find_package can't find it, you need to set the PATH as below. refer to https://www.kancloud.cn/csyangbinbin/cmake-cookbook1/2157938  https://iscinumpy.gitlab.io/post/omp-on-high-sierra/)
+if(DEFINED ENV{BREW_OPENMP})
+  # Check if BREW_OPENMP equals 1
+  if($ENV{BREW_OPENMP} EQUAL 1)
+    message(STATUS "Searching for OpenMP in brew path")
+    # Put your code here to search for OpenMP in brew path
+    execute_process(COMMAND brew --prefix OUTPUT_VARIABLE BREW_PREFIX OUTPUT_STRIP_TRAILING_WHITESPACE)
+    set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${BREW_PREFIX}/opt/libomp/include")
+    set(OpenMP_CXX_LIB_NAMES "omp")
+    set(OpenMP_omp_LIBRARY "${BREW_PREFIX}/opt/libomp/lib")
+    find_package(OpenMP REQUIRED)
+  else()
+    message(STATUS "Searching for OpenMP in default path")
+    # Put your code here to search for OpenMP in default path
+    find_package(OpenMP REQUIRED)
+  endif()
+else()
+  message(STATUS "BREW_OPENMP not set, searching for OpenMP in default path")
+  # Put your code here to search for OpenMP in default path
+  find_package(OpenMP REQUIRED)
+endif()
+
+
 ### pybind11 xtensor xtl xsimd xtensor-blas xtensor-python
 find_package(pybind11 REQUIRED CONFIG)
 find_package(xtensor REQUIRED)
@@ -92,18 +115,6 @@ message(STATUS "BLAS VENDOR:    " ${BLA_VENDOR})
 message(STATUS "BLAS LIBRARIES: " ${BLAS_LIBRARIES})
 
 
-### OpenMP (clang doesn't bring openmp, you need to install it by brew, and find_package can't find it, you need to set the PATH as below. refer to https://www.kancloud.cn/csyangbinbin/cmake-cookbook1/2157938  https://iscinumpy.gitlab.io/post/omp-on-high-sierra/)
-if(APPLE AND "${CMAKE_CXX_COMPILER_ID}" MATCHES "AppleClang" OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    message(STATUS "Using AppleClang in mac will set brew lib path for OpenMP")
-    execute_process(COMMAND brew --prefix OUTPUT_VARIABLE BREW_PREFIX OUTPUT_STRIP_TRAILING_WHITESPACE)
-    set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${BREW_PREFIX}/opt/libomp/include")
-    set(OpenMP_CXX_LIB_NAMES "omp")
-    set(OpenMP_omp_LIBRARY "${BREW_PREFIX}/opt/libomp/lib")
-endif()
-find_package(OpenMP REQUIRED)
-
-
-
 ### KFR 
 include_directories("./extern/kfr/include")
 
@@ -115,20 +126,12 @@ include_directories("./extern/kfr/include")
 ################################################################### 
 pybind11_add_module(cc_share ${CMAKE_SOURCE_DIR}/noiseflow/cc/src/pybind11.cpp)
 target_include_directories(cc_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/cc/src ${CMAKE_SOURCE_DIR}/noiseflow/cc/include)
-if(OPENMP_FOUND)
-    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
-else()
-    target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python)
-endif()
+target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
 
 
 pybind11_add_module(signal_share ${CMAKE_SOURCE_DIR}/noiseflow/signal/src/pybind11.cpp)
 target_include_directories(signal_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/signal/src ${CMAKE_SOURCE_DIR}/noiseflow/signal/include)
-if(OPENMP_FOUND)
-    target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX)
-else()
-    target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python)
-endif()
+target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX)
 
 
 ### setup.py will install the module to the python site-packages
