@@ -27,6 +27,6 @@ jobs:
           sudo apt install libomp-dev
 
       - name: Set up python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
