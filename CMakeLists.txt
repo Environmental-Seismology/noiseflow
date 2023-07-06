@@ -107,14 +107,6 @@ if(FFTW_FOUND)
 endif()
 
 
-### BLAS/LAPACK, which is xtensor-blas' dependencies
-add_definitions(-DHAVE_CBLAS=1)
-find_package(BLAS REQUIRED)
-find_package(LAPACK REQUIRED)
-message(STATUS "BLAS VENDOR:    " ${BLA_VENDOR})
-message(STATUS "BLAS LIBRARIES: " ${BLAS_LIBRARIES})
-
-
 ### KFR 
 include_directories("./extern/kfr/include")
 
@@ -126,12 +118,12 @@ include_directories("./extern/kfr/include")
 ################################################################### 
 pybind11_add_module(cc_share ${CMAKE_SOURCE_DIR}/noiseflow/cc/src/pybind11.cpp)
 target_include_directories(cc_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/cc/src ${CMAKE_SOURCE_DIR}/noiseflow/cc/include)
-target_link_libraries(cc_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
+target_link_libraries(cc_share PUBLIC ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-blas xtensor-python Python::NumPy OpenMP::OpenMP_CXX) 
 
 
 pybind11_add_module(signal_share ${CMAKE_SOURCE_DIR}/noiseflow/signal/src/pybind11.cpp)
 target_include_directories(signal_share PRIVATE ${CMAKE_SOURCE_DIR}/noiseflow/signal/src ${CMAKE_SOURCE_DIR}/noiseflow/signal/include)
-target_link_libraries(signal_share PUBLIC ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-python Python::NumPy OpenMP::OpenMP_CXX)
+target_link_libraries(signal_share PUBLIC ${FFTW_LIBRARIES} pybind11::module xtensor xtensor::optimize xtensor::use_xsimd xtensor-blas xtensor-python Python::NumPy OpenMP::OpenMP_CXX)
 
 
 ### setup.py will install the module to the python site-packages

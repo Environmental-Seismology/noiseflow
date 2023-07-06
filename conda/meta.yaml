@@ -1,6 +1,6 @@
 {% set org = "Environmental-Seismology" %}
 {% set name = "noiseflow" %}
-{% set version = "0.0.6b" %}
+{% set version = "0.0.6c" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 8edd78dbf8f9baa25a174b4699a1c3e42bd3e93fbc0c632e81071e22f8a3cb81
+  sha256: 777520ebf8638f105e59d46c560a85da484e2d07a7ead95ead66d868a11288db
 
 build:
   number: 0
@@ -19,22 +19,27 @@ build:
 outputs:
 
   - name: {{ name|lower }}
-    script: install.sh  # [unix]
-    script: install.bat  # [win]
+    script: build_osx.sh  # [osx]
+    script: build_linux.sh  # [linux]
+    script: build_win.bat  # [win]
 
     requirements:
       build:
         - "{{ compiler('cxx') }}"
-        - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-        - python                              # [build_platform != target_platform]
+        - python >=3.9                              
         - poetry-core
         - setuptools                          
         - cmake
-        - numpy                             
-
+        - numpy 
+        - pip  
+        - make  # [unix]
+        - ninja    
+        - llvm-openmp  
+           
       host:
-        - python
-        - numpy
+        - pip
+        - python >=3.9
+        - numpy 
         - fftw
         - pybind11
         - xtensor
@@ -42,10 +47,11 @@ outputs:
         - xsimd =8.0.5
         - xtl 
         - xtensor-blas
+        - llvm-openmp  
 
       run:
-        - numpy
-        - scipy
+        - numpy >=1.25.0
+        - scipy =1.10.1
         - matplotlib-base
         - h5py
         - joblib 
@@ -53,18 +59,19 @@ outputs:
         - obspy
         - faker
 
+
+
       test:
-        requires:
-          - pytest
         imports:
           - noiseflow
-
+          - noiseflow.cc
+          - noiseflow.signal
 
 about:
+  home: https://github.com/{{ org }}/{{ name }}
   summary: An ambient noise package.
   license: Apache-2.0
   license_file: LICENSE
-
 
 extra:
   recipe-maintainers:
